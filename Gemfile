@@ -31,6 +31,7 @@ gem 'hirb'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
