@@ -29,8 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry'
 gem 'hirb'
 gem 'devise'
-gem 'ominauth'
-gem 'ominauth-google-oauth2'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -41,7 +41,7 @@ gem 'ominauth-google-oauth2'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a debugg er console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
