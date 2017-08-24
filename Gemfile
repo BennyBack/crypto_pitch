@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry'
 gem 'hirb'
 gem 'devise'
+gem 'ominauth'
 gem 'ominauth-google-oauth2'
 
 # Use Redis adapter to run Action Cable in production
