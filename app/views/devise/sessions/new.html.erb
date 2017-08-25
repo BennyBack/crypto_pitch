@@ -1,26 +1,44 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="card card-outline-secondary">
+      <div class="card-header">
+        <h3 class='mb-0'>
+          <%= t('.sign_in', default: 'Sign in') %>
+        </h3>
+      </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
+      <div class="card-block">
+        <div class="form-group">
+          <%= f.label :email, class: 'col-form-label' %>
+          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, class: 'col-form-label'  %>
+          <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+        </div>
+        <% if devise_mapping.rememberable? %>
+        <div class="form-check small ">
+          
+          <%= f.label :remember_me, class: 'form-check-label' do %>
+          <%= f.check_box :remember_me, class: "form-check-input" %>
+          <%= t('.remember_me', default: 'Remember me') %>
+          <% end %>
+          <% end %>
+          <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-success btn-lg float-right' %>
+          <% end %>
+          <%= render 'devise/shared/links' %>
+        </div>
+      </div>
+      <div class="card-block">
+        
+        <% if devise_mapping.omniauthable? %>
+        <% resource_class.omniauth_providers.each do |provider| %>
+        <% if provider.to_s.titleize == "Google Oauth2" %>
+        <%= link_to t('.sign_in_with_provider', provider: provider.to_s.titleize, default: "Sign in with #{provider.to_s.titleize}"), omniauth_authorize_path(resource_name, provider), class: "btn btn-block btn-social-icon btn-google" %><br />
+        <% elsif provider.to_s.titleize == "Facebook" %>
+        <%= link_to t('.sign_in_with_provider', provider: provider.to_s.titleize, default: "Sign in with #{provider.to_s.titleize}"), omniauth_authorize_path(resource_name, provider), class: "btn btn-block btn-social-icon btn-facebook" %><br />
+        <% end %>
+        <% end %>
+        <% end %>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
