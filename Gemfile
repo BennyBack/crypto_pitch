@@ -14,7 +14,6 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'dotenv-rails'
 gem 'twilio-ruby'
-gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
