@@ -14,7 +14,6 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'dotenv-rails'
 gem 'twilio-ruby'
-gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -67,3 +66,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Added at 2017-08-25 12:41:45 -0400 by zannain:
+gem "bootstrap", "~> 4.0.0.beta"
+
+# Added at 2017-08-25 12:44:02 -0400 by zannain:
+gem "jquery-rails", "~> 4.3"
