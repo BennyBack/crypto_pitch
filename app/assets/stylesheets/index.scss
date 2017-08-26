@@ -1,0 +1,85 @@
+body {
+  background: image-url("stockbackground.jpg");
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
+}
+
+@media screen and (min-width: 736px) {
+  body {
+    background: image-url("stockbackground.jpg");
+    width: auto ;
+    max-width: 100% ;
+    height: auto ;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+}
+
+
+body {
+	font-family: Arial, Helvetica, sans-serif ;
+}
+img {
+	max-width: 100% ;
+	width: auto ;
+	height: auto ;
+}
+
+div#tswsidecol {
+	float: right ;
+	width: 20% ;
+	color: #000 ;
+	background-color: #fff ;
+}
+div#tswcontent {
+	float: right ;
+	width: 80% ;
+	color: #000 ;
+	background-color: #fff ;
+}
+@media only screen and (max-width: 632px) {
+	div#tswsidecol {
+		float: none ;
+		width: 100% ;
+	}
+	div#tswcontent {
+		float: none ;
+		width: 100% ;
+	}
+}
+div#tswcontproper, div#tswsideproper {
+	padding-left: 5px ;
+	padding-right: 5px ;
+}
+div#header_container {
+	color: white ;
+
+}
+div#crypto_header {
+	color: #000 ;
+	background: image-url("header-bg.png")
+}
+
+#crypto_header  p {
+  font-family: 'Raleway Dots', cursive;
+  color: white;
+}
+
+
+#crypto_header h1  {
+  font-family: 'Monoton', cursive;
+  text-align: center;
+  color: white;
+}
+
+#crypto_header p:nth-child(2){
+  text-align: center;
+  font-size: 24px;
+}
+div#tswfooter {
+	clear: both ;
+	color: #000 ;
+	background-color: #fff ;
+}

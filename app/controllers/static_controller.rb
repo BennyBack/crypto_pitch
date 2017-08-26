@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
   def index
+    render static: 'index'
   end
 
   def about
@@ -7,5 +8,5 @@ class StaticController < ApplicationController
 
   def dashboard
   end
-  
+
 end
