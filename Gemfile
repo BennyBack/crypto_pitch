@@ -37,7 +37,7 @@ gem 'omniauth-facebook'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "therubyracer"
 gem 'devise-bootstrap-views'
-gem 'multipart-post'
+gem 'font-awesome-sass'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
