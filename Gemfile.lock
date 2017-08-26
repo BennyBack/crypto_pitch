@@ -280,7 +280,10 @@ DEPENDENCIES
   devise
   devise-bootstrap-views
   dotenv-rails
+<<<<<<< HEAD
   font-awesome-sass
+=======
+>>>>>>> b32c8d64aadb4eb43d1b526bf3da7229dcf40197
   hirb
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3)
