@@ -71,4 +71,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "bootstrap", "~> 4.0.0.beta"
 
 # Added at 2017-08-25 12:44:02 -0400 by zannain:
-gem "jquery-rails", "~> 4.3"
+
+# Added at 2017-08-26 18:08:33 -0400 by zannain:
+gem "figaro", "~> 1.1"
