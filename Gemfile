@@ -38,7 +38,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem "therubyracer"
 gem 'devise-bootstrap-views'
 gem 'font-awesome-sass'
-gem 'httparty'
+gem 'httparty' 
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
