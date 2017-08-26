@@ -14,7 +14,6 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'dotenv-rails'
 gem 'twilio-ruby'
-gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,6 +37,8 @@ gem 'omniauth-facebook'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "therubyracer"
 gem 'devise-bootstrap-views'
+gem 'font-awesome-sass'
+gem 'httparty' 
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
