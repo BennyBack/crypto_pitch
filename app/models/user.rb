@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :alerts
   has_many :authorizations
 
+  
+
 
 def self.new_with_session(params, session)
   super.tap do |user|
