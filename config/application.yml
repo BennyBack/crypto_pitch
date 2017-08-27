@@ -9,3 +9,8 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+shared:
+  google_id: 988857981674-21qbuhm0ludf3e38oj6ld7lmslfrlf6i.apps.googleusercontent.com
+  google_secret: 8oqc4utDLtkaWAVT-WZj6y3z
+  facebook_id: 432071543853152
+  facebook_secret: 2bf1ee8b948e9bf1b13ec9d5a279be24
