@@ -1,6 +1,5 @@
-body {
-  background: url("background.jpeg") no-repeat top center;
-  nav li {
-    list-style-type:none;
-  }
+@import "bootstrap";
+
+#alert-form {
+  display:none;
 }
