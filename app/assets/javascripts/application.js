@@ -15,3 +15,9 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function () {
+  console.log("Im ready");
+  // $('.crypto-name').popover({
+  //   trigger: 'hover'
+  // });
+})
