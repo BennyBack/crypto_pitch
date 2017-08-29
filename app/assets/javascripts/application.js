@@ -14,6 +14,7 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
+<<<<<<< HEAD
 //= require_tree .
 
 $(document).on('turbolinks:load', function () {
@@ -25,3 +26,6 @@ $(document).on('turbolinks:load', function () {
 $('.crypto-name').popover({
   trigger: 'hover'
 });
+=======
+//= require_tree
+>>>>>>> cbbfe13f902c41ebe3f669384c126cc771ac0e7b
