@@ -24,8 +24,7 @@ gem 'omniauth-facebook'
 gem "therubyracer"
 gem 'devise-bootstrap-views'
 gem 'font-awesome-sass'
-gem 'httparty' 
-gem 'jquery-rails'
+gem 'httparty'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "bootstrap", "~> 4.0.0.beta"
 gem "figaro", "~> 1.1"
@@ -42,7 +41,6 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-<<<<<<< HEAD
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -55,6 +53,3 @@ gem "bootstrap", "~> 4.0.0.beta"
 gem "jquery-rails", "~> 4.3"
 
 gem "bootstrap-sass"
-=======
-end
->>>>>>> 3e85cf2e481b4e48c1ddeec7e8c6464c4d201a41

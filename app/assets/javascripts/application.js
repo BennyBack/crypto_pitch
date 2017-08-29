@@ -14,22 +14,4 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
-<<<<<<< HEAD
 //= require_tree
-=======
-//= require_tree .
-
-$(document).on('turbolinks:load', function () {
-  $('#alert_name').focus();
-
-  $('.modal-footer .btn-primary').click(function () {
-    console.log('save the changes!');
-  });
-});
-// $(document).ready(function () {
-//   console.log("Im ready");
-//   $('.crypto-name').popover({
-//     trigger: 'hover'
-//   });
-// })
->>>>>>> 3e85cf2e481b4e48c1ddeec7e8c6464c4d201a41
