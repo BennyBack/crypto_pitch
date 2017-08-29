@@ -1,34 +1,44 @@
 class AlertsController < ApplicationController
-  before_action :all_alerts, only: [:index, :create]
+  before_action :all_alerts, only: [:index]
+  before_action :set_alert, only: [:show, :edit, :update, :destroy]
+  before_action :new_alert, only: [:index, :new]
 
   def index
-    @alert = Alert.new
     @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=5")
   end
 
   def create
-   @alert = current_user.alerts.build(alert_params)
-   if @alert.save!
-    redirect_to user_alerts_path(current_user, @alert)
+  #  @alert = current_user.alerts.build(alert_params)
+  # binding.pry
+  @alert = Alert.new(alert_params)
+  @alert.user = current_user
+   if @alert.save
+    redirect_to user_alerts_path(current_user, @alert), notice: 'Task was successfully created.'
    end
   end
 
   def new
-    @alert = Alert.new
   end
    
   def show
-    @alert = Alert.find(params[:id])
   end
 
   def update
-    @alert = Alert.find(params[:id])
     if @alert.update(alert_params)
       redirect_to user_alerts_path
     end
   end
 
   private
+
+  def set_alert
+    @alert = Alert.find(params[:id])
+  end
+
+  def new_alert
+    @alert = Alert.new(params[:id])
+  end
+
   def all_alerts
     @alerts = Alert.all
   end
