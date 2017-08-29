@@ -2,7 +2,7 @@ class AlertsController < ApplicationController
   before_action :all_alerts, only: [:index, :create]
 
   def index
-    @user = current_user
+    # @user = current_user
     @alert = Alert.new
     @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=5")
   end
