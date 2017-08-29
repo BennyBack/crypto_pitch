@@ -72,3 +72,5 @@ gem "bootstrap", "~> 4.0.0.beta"
 
 # Added at 2017-08-25 12:44:02 -0400 by zannain:
 gem "jquery-rails", "~> 4.3"
+
+gem "bootstrap-sass"
