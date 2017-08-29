@@ -30,13 +30,6 @@ ActiveRecord::Schema.define(version: 20170829201925) do
     t.index ["user_id"], name: "index_alerts_on_user_id"
   end
 
-  create_table "authorizations", force: :cascade do |t|
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_authorizations_on_user_id"
-  end
-
   create_table "identities", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -68,6 +61,5 @@ ActiveRecord::Schema.define(version: 20170829201925) do
   end
 
   add_foreign_key "alerts", "users"
-  add_foreign_key "authorizations", "users"
   add_foreign_key "identities", "users"
 end
