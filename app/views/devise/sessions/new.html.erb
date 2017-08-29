@@ -1,7 +1,4 @@
-<div class="card card-default devise-bs p-2">
-  <div class="card-heading">
-    <h4><%= t('.sign_in', default: 'Sign in') %></h4>
-  </div>
+</div>
   <div class="card-body">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
       <div class="form-group">
@@ -22,5 +19,3 @@
       <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary' %>
     <% end %>
   </div>
-</div>
-<%= render 'devise/shared/links' %>

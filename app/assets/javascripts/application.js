@@ -18,14 +18,10 @@
 
 $(document).on('turbolinks:load', function () {
   $('.time').focus();
-
   $('.modal-footer .btn-primary').click(function () {
-    console.log('save the changes!');
+    $(".modal-body form").submit();
   });
 });
-// $(document).ready(function () {
-  //   console.log("Im ready");
 $('.crypto-name').popover({
   trigger: 'hover'
 });
-// })

@@ -1,0 +1,178 @@
+div {
+  max-width: 100%;
+}
+
+body {
+  background: image-url("stockbackground.jpg") no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@media screen and (min-width: 736px) {
+  body {
+    background: image-url("stockbackground.jpg")no-repeat center fixed;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+#carouselContent {
+  height: 300px;
+  width: 414px;
+}
+
+.carousel-item.active img {
+  width: 400px;
+  height: 300px;
+}
+
+svg {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.row {}
+@media only screen and (max-width: 632px) {
+  svg {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 632px) {
+  p {
+    color: black;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+p {
+  color: black;
+  text-align: center;
+  display: flex;
+}
+
+#carouselContent {
+  align-content: center;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+div#tswsidecol {
+  float: right;
+  width: 20%;
+  color: #000;
+}
+
+div#tswcontent {
+  float: right;
+  width: 80%;
+  color: #000;
+  background-color: #fff;
+}
+@media only screen and (max-width: 632px) {
+  div#tswsidecol {
+    float: none;
+    width: 100%;
+  }
+
+  div#tswcontent {
+    float: none;
+    width: 100%;
+  }
+}
+
+div#tswcontproper,
+div#tswsideproper {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+div#header_container {
+  color: white;
+}
+
+div#crypto_header {
+  margin-top: 100px;
+  background-color: rgba(0,0,0,.7);
+  height: 200px;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#about {
+  background-color: aqua;
+}
+
+.crypto-primary {
+  background-color: rgba(0,0,0,.7);
+}
+
+#crypto_header h1 {
+  padding-top: 60px;
+  font-family: 'Monoton', cursive;
+  text-align: center;
+  color: white;
+}
+
+#crypto_header h2 {
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Raleway Dots', cursive;
+  color: white;
+}
+
+div#tswfooter {
+  clear: both;
+  color: #000;
+}
+
+body > header > nav > button > span {
+  color: white;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.description-body {
+  color: white;
+  height: 561px;
+  width: 100%;
+}
+
+.nav-link {
+  margin-left: 5px;
+}
+
+.navbar-brand {
+  font-family: 'Monoton', cursive;
+  color: white;
+  margin-left: 5px;
+  margin-top: 8px;
+}
+
+.panel-default > .panel-heading {
+  background-color: white;
+}
