@@ -1,8 +1,5 @@
 @import "bootstrap";
-@import url( 'https://fonts.googleapis.com/css?family=Poiret+One');
-
-
-.navbar-dark .navbar-brand {
+.navbar-inverse .navbar-brand {
   text-transform: uppercase;
   font-family: 'Monoton', cursive;
   color: white;
@@ -13,7 +10,7 @@
 }
 
 @media only screen and (min-width: 400px) {
-  .navbar-expand-sm  {
+  .navbar-expand-sm {
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
     border-bottom: solid .5px white;
