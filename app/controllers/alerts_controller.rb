@@ -1,10 +1,14 @@
 class AlertsController < ApplicationController
-  before_action :all_alerts, only: [:index]
+  before_action :all_alerts, only: [:index,:dashboard]
   before_action :set_alert, only: [:show, :edit, :update, :destroy]
   before_action :new_alert, only: [:index, :new]
 
   def index
     @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=5")
+  end
+
+  def dashboard
+    redirect_to user_alerts_path(current)
   end
 
   def create
