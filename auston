@@ -1,0 +1,4 @@
+Create a single create_from_oauth method on User model
+  In the create_from_oauth method 
+    i will need to use "#{provider}_token" to get or set the token.
+Make sure user model has a token columns for each provider(i.e. facebook_token, google_token)

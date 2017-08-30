@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: 'static#index'
-  devise_for :users, :controllers => {sessions:'sessions', registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users do
-    resources :alerts
+    resources :alerts, shallow: true
   end
   get 'search', to: 'alerts#index', as: 'search'
   get 'about', to: 'static#about', as: 'about'

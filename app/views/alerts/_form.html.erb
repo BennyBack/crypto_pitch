@@ -1,4 +1,4 @@
-<%= form_for [current_user, @alert], url: user_alerts_path(current_user), remote: true do |f| %>
+<%= form_with(model: @alert, remote: true, url: user_alerts_path(current_user), :authenticity_token => true) do |f| %>
 <div class="time">
   <%= f.label :time %>
   <%= f.text_field :time %>
@@ -28,10 +28,6 @@
 <div class="time_interval">
   <%= f.label :time_interval %>
   <%= f.text_field :time_interval %>
-</div>
-
-<div class="submit">
-  <%= f.submit %>
 </div>
 
 <% end %>

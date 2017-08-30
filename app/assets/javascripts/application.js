@@ -14,4 +14,14 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
-//= require_tree
+//= require_tree .
+
+$(document).on('turbolinks:load', function () {
+  $('.time').focus();
+  $('.modal-footer .btn-primary').click(function () {
+    $(".modal-body form").submit();
+  });
+});
+$('.crypto-name').popover({
+  trigger: 'hover'
+});
