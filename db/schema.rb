@@ -60,5 +60,4 @@ ActiveRecord::Schema.define(version: 20170829220114) do
   end
 
   add_foreign_key "alerts", "users"
-  add_foreign_key "identities", "users"
 end

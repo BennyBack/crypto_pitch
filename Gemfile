@@ -54,3 +54,6 @@ gem "bootstrap", "~> 4.0.0.beta"
 gem "jquery-rails", "~> 4.3"
 
 gem "bootstrap-sass"
+
+# Added at 2017-08-30 13:52:36 -0400 by zannain:
+gem "faker", "~> 1.8"
