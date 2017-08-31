@@ -9,8 +9,9 @@
   margin-left: 6px;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 415px) {
   .navbar-expand-sm {
+    min-width: 100%;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
     border-bottom: solid .5px white;

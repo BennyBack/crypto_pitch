@@ -35,7 +35,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
-
+  def new
+    self.resource = resource_class.new(sign_in_params)
+    @resource = self.resource
+    clean_up_passwords(resource)
+    yield resource if block_given?
+    respond_to do |format|
+      format.js { render 'new.js.erb' }
+      format.html { respond_with(resource, serialize_options(resource)) }
+    end
+  end
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
