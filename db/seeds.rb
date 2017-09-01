@@ -15,7 +15,7 @@ password = "password"
     "email": Faker::Internet.email,
     "phone_number": Faker::PhoneNumber.phone_number,
     "password": "password",
-    "password_confirmation": "password",
+    "password_digest": "password",
     )
   end
 puts "Seed file complete"
