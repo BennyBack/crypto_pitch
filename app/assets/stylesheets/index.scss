@@ -31,14 +31,29 @@ body {
 }
 
 .alert-danger {
+  font-size: 16px;
   text-align: center;
+  font-family: 'Marcellus SC', serif;
 }
 
+form {
+  width: auto;
+  margin:0;
+  background-color: ghostwhite;
+
+}
 #aboutpage {
   position: relative;
-  left: 250px;
+  max-width: 300px;
+  margin: 0;
 }
 
+#loginModal > div > div > div.modal-body > a {
+  color: black;
+}
+.form-control {
+  width: auto;
+}
 .jumbotron {
   background-color: ghostwhite;
 }
