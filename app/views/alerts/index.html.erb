@@ -17,14 +17,14 @@
     <tbody>
       
       <% @crypto.each do |result| %>
-    </tr>
+    <tr id="<%= result['symbol'] %>">
     <td>
       <a tabindex="0" class="btn crypto-name" role="button" data-toggle="tooltip" data-placement="bottom" title="<%= result['name'] %>">
       <%= result['symbol'] %>
     </a>
     </td>
     <td><%= result['rank'] %></td>
-    <td><%= result['price_usd'] %></td>
+    <td class="price"><%= result['price_usd'] %></td>
     <td><%= result['price_btc'] %></td>
     <td><%= result['24h_volume_usd'] %></td>
     <td><%= result['market_cap_usd'] %></td>
@@ -33,8 +33,8 @@
     <td><%= result['percent_change_1h'] %></td>
     <td><%= result['percent_change_24h'] %></td>
     <td><%= result['percent_change_7d'] %></td>
-    <td><%= link_to "Alert Me", new_user_alert_path(current_user), remote: true %></td>
-    <tr>
+    <td><%= link_to "Alert Me", "#{new_user_alert_path(current_user)}?currency=#{result['name']}", remote: true %></td>
+  </tr>
       <% end %>
     </tbody>
   </table>
