@@ -3,4 +3,3 @@ class AddEmailToUsers < ActiveRecord::Migration[5.1]
     create_table :users
   end
 end
-last

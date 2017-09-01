@@ -49,3 +49,14 @@ $black-medium-light: #333;
     margin-top: 45px;
     @include box_sizing;
 }
+
+.user_show {
+    height: 400px;
+    width: 100%;
+    background: white;
+}
+
+.new_user {
+    background: white;
+    padding: 10px;
+}

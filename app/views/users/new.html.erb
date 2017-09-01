@@ -1,31 +1,24 @@
-<%=  form_for(@user) do |f| %>
-    <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
-    </div>
+<div class="container new_user">
+<h4>Sign Up</h4>
+    <%=  form_for(@user) do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: 'form-control' %>
 
-    <div>
-    <%= f.label :email %>
-    <%= f.text_field :email, class: "form-control" %>
-    </div>
-
-    <div>
-    <%= f.label :phone_number%>
-    <%= f.text_field :phone_number, class: "form-control"%>
-    </div>
-
-    <div>
-    <%= f.label :password %>
-    <%= f.text_field :password, class: "form-control" %>
-    </div>
-
-    <div>
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.text_field :password_confirmation, class: "form-control" %>
-    </div>
-
-    <div>
-    <%= f.submit "Create my account", class: 'btn btn-primary' %>
-    </div>
-    <% end %>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+    
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number,class: 'form-control' %>
+    
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+    
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+    
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+    
+       <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end%>
     </div>
