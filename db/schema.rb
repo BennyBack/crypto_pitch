@@ -30,13 +30,6 @@ ActiveRecord::Schema.define(version: 20170829220114) do
     t.index ["user_id"], name: "index_alerts_on_user_id"
   end
 
-  create_table "identities", force: :cascade do |t|
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_identities_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

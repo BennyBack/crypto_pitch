@@ -29,7 +29,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "bootstrap", "~> 4.0.0.beta"
 gem "figaro", "~> 1.1"
 gem 'railties', '~> 5.0'
-gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

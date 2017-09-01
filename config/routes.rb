@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'user/alerts', to: 'alerts#index'
   get 'search', to: 'alerts#index', as: 'search'
   get 'about', to: 'static#about', as: 'about'
-  get 'dashboard', to: 'static#dashboard', as: 'dashboard'
+  get 'dashboard', to: 'alerts#dashboard', as: 'dashboard'
 end

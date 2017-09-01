@@ -8,12 +8,12 @@ class AlertsController < ApplicationController
   end
 
   def dashboard
-    redirect_to user_alerts_path(current)
+    
   end
 
   def create
   #  @alert = current_user.alerts.build(alert_params)
-  # binding.pry
+# binding.pry
   @alert = Alert.new(alert_params)
   @alert.user = current_user
    if @alert.save
@@ -22,6 +22,7 @@ class AlertsController < ApplicationController
   end
 
   def new
+    @currency = params[:currency]
   end
    
   def show
