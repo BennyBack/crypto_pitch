@@ -358,14 +358,14 @@
       <pre class="lines">
 
 
+22
 23
 24
 25
-26
-27</pre>
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='const'><span class='object_link'><a href="" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_digest'>digest</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cost'>cost</span> <span class='op'>=</span> <span class='const'>ActiveModel</span><span class='op'>::</span><span class='const'>SecurePassword</span><span class='period'>.</span><span class='id identifier rubyid_min_cost'>min_cost</span> <span class='op'>?</span> <span class='const'>BCrypt</span><span class='op'>::</span><span class='const'>Engine</span><span class='op'>::</span><span class='const'>MIN_COST</span> <span class='op'>:</span>
@@ -392,12 +392,12 @@
       <pre class="lines">
 
 
+18
 19
-20
-21</pre>
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='const'><span class='object_link'><a href="" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_token'>new_token</span>
   <span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_urlsafe_base64'>urlsafe_base64</span>
@@ -450,17 +450,15 @@
       <pre class="lines">
 
 
+33
 34
-35
-36
-37</pre>
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authenticated?'>authenticated?</span><span class='lparen'>(</span><span class='id identifier rubyid_remember_token'>remember_token</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='id identifier rubyid_remember_digest'>remember_digest</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-  <span class='const'>Bcrypt</span><span class='op'>::</span><span class='const'>Password</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_remember_digest'>remember_digest</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_is_password?'>is_password?</span><span class='lparen'>(</span><span class='id identifier rubyid_remember_token'>remember_token</span><span class='rparen'>)</span>
+  <span class='const'>BCrypt</span><span class='op'>::</span><span class='const'>Password</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_remember_digest'>remember_digest</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_is_password?'>is_password?</span><span class='lparen'>(</span><span class='id identifier rubyid_remember_token'>remember_token</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -482,12 +480,12 @@
       <pre class="lines">
 
 
-39
-40
-41</pre>
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_forget'>forget</span>
   <span class='id identifier rubyid_update_attribute'>update_attribute</span><span class='lparen'>(</span><span class='symbol'>:remember_digest</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
@@ -512,13 +510,13 @@
       <pre class="lines">
 
 
+28
 29
 30
-31
-32</pre>
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remember'>remember</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_remember_token'>remember_token</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_token'><span class='object_link'><a href="#new_token-class_method" title="User.new_token (method)">new_token</a></span></span>
@@ -534,7 +532,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Sep  2 02:15:26 2017 by
+  Generated on Sat Sep  2 16:49:55 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>

@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   get 'signup', to: "users#new"
   get 'about', to: "static#about", as: "about"
   # get 'user/alerts', to: 'alerts#index'
-  get 'search', to: 'alerts#index'
-  get 'dashboard', to: 'alerts#dashboard'
+  get 'search', to: 'alerts#search'
   
   post 'signup',  to: 'users#create'
   
