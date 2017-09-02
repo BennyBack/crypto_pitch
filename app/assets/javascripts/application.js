@@ -16,12 +16,12 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function () {
-  $('.time').focus();
-  $('.modal-footer .btn-primary').click(function () {
-    $(".modal-body form").submit();
-  });
+$(document).on('turbolinks:load', function() {
+    $('.time').focus();
+    $('.modal-footer .btn-primary').click(function() {
+        $(".modal-body form").submit();
+    });
 });
 $('.crypto-name').popover({
-  trigger: 'hover'
+    trigger: 'hover'
 });

@@ -1,4 +1,3 @@
-@import "bootstrap";
 .navbar-inverse .navbar-brand {
     text-transform: uppercase;
     font-family: 'Monoton', cursive;
@@ -50,13 +49,17 @@ $black-medium-light: #333;
     @include box_sizing;
 }
 
-.user_show {
-    height: 400px;
-    width: 100%;
-    background: white;
-}
-
 .new_user {
     background: white;
+    padding: 10px;
+}
+
+.z_div {
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    border: 3px solid green;
+    background: #333;
+    color: white;
     padding: 10px;
 }

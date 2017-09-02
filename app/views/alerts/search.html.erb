@@ -1,0 +1,61 @@
+
+<table class="table table-bordered table-hover table-responsive table-inverse">
+  <thead class="thead-default">
+    <tr>
+      <th>Symbol</th>
+      <th>Rank</th>
+      <th>Price (USD)</th>
+      <th>Price (Bitcoin)</th>
+      <th>24 Hour Volume (USD)</th>
+      <th>Market Cap (USD)</th>
+      <th>Available Supply</th>
+      <th>Total Supply</th>
+      <th>1 Hr %&Delta;</th>
+      <th>1 Day %&Delta;</th>
+      <th>7 Day %&Delta;</th>
+      <th></th>
+    </thead>
+    <tbody>
+      
+      <% @crypto.each do |result| %>
+    <tr id="<%= result['symbol'] %>">
+    <td>
+      <a tabindex="0" class="btn  crypto-name" role="button" data-toggle="tooltip" data-placement="bottom" title="<%= result['name'] %>">
+      <%= result['symbol'] %>
+    </a>
+    </td>
+    <td><%= result['rank'] %></td>
+    <td class="price"><%= result['price_usd'] %></td>
+    <td><%= result['price_btc'] %></td>
+    <td><%= result['24h_volume_usd'] %></td>
+    <td><%= result['market_cap_usd'] %></td>
+    <td><%= result['available_supply'] %></td>
+    <td><%= result['total_supply'] %></td>
+    <td><%= result['percent_change_1h'] %></td>
+    <td><%= result['percent_change_24h'] %></td>
+    <td><%= result['percent_change_7d'] %></td>
+    <td><%= link_to "Alert Me", "#{new_user_alert_path(current_user)}?currency=#{result['name']}&currency_value=$#{result['price_usd']}", remote: true %></td>
+  </tr>%
+      <% end %>
+    </tbody>
+  </table>
+  
+    <div class="alert-modal modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create Alert</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body alert-modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
