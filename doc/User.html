@@ -117,6 +117,38 @@
 
 
 
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remember_token-instance_method" title="#remember_token (instance method)">#<strong>remember_token</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute remember_token.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
 
 
 
@@ -150,6 +182,103 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_token-class_method" title="new_token (class method)">.<strong>new_token</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#authenticated%3F-instance_method" title="#authenticated? (instance method)">#<strong>authenticated?</strong>(remember_token)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#forget-instance_method" title="#forget (instance method)">#<strong>forget</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remember-instance_method" title="#remember (instance method)">#<strong>remember</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -161,6 +290,54 @@
   
   
   
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="remember_token=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="remember_token-instance_method">
+  
+    #<strong>remember_token</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute remember_token</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2
+3
+4</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 2</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remember_token'>remember_token</span>
+  <span class='ivar'>@remember_token</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
@@ -181,14 +358,14 @@
       <pre class="lines">
 
 
-17
-18
-19
-20
-21</pre>
+23
+24
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='const'><span class='object_link'><a href="" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_digest'>digest</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cost'>cost</span> <span class='op'>=</span> <span class='const'>ActiveModel</span><span class='op'>::</span><span class='const'>SecurePassword</span><span class='period'>.</span><span class='id identifier rubyid_min_cost'>min_cost</span> <span class='op'>?</span> <span class='const'>BCrypt</span><span class='op'>::</span><span class='const'>Engine</span><span class='op'>::</span><span class='const'>MIN_COST</span> <span class='op'>:</span>
@@ -200,12 +377,164 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="new_token-class_method">
+  
+    .<strong>new_token</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='const'><span class='object_link'><a href="" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_token'>new_token</span>
+  <span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_urlsafe_base64'>urlsafe_base64</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="authenticated?-instance_method">
+  
+    #<strong>authenticated?</strong>(remember_token)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_authenticated?'>authenticated?</span><span class='lparen'>(</span><span class='id identifier rubyid_remember_token'>remember_token</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='id identifier rubyid_remember_digest'>remember_digest</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='const'>Bcrypt</span><span class='op'>::</span><span class='const'>Password</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_remember_digest'>remember_digest</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_is_password?'>is_password?</span><span class='lparen'>(</span><span class='id identifier rubyid_remember_token'>remember_token</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="forget-instance_method">
+  
+    #<strong>forget</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_forget'>forget</span>
+  <span class='id identifier rubyid_update_attribute'>update_attribute</span><span class='lparen'>(</span><span class='symbol'>:remember_digest</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remember-instance_method">
+  
+    #<strong>remember</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remember'>remember</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_remember_token'>remember_token</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_token'><span class='object_link'><a href="#new_token-class_method" title="User.new_token (method)">new_token</a></span></span>
+  <span class='id identifier rubyid_update_attribute'>update_attribute</span><span class='lparen'>(</span><span class='symbol'>:remember_digest</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_digest'><span class='object_link'><a href="#digest-class_method" title="User.digest (method)">digest</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_remember_token'>remember_token</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Fri Sep  1 20:45:50 2017 by
+  Generated on Sat Sep  2 01:11:39 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
