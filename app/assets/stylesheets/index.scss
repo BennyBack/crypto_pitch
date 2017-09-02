@@ -224,7 +224,15 @@ header {
 .panel-default > .panel-heading {
   background-color: white;
 }
+.homepage {
+  background: image-url("stockbackground.jpg") no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
 
+}
 .homepagebody {
   color: rgba(0,0,0,.5);
 }
