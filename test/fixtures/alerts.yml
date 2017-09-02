@@ -1,21 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  time: 2017-08-24 10:52:19
-  currency: MyString
-  start_value: 1
-  min_new: 1.5
-  max_new: 1.5
-  time_value: 1
-  time_interval: MyString
-  alert_at: 2017-08-24 10:52:19
+# one:
+#   time: 2017-08-24 10:52:19
+#   currency: MyString
+#   start_value: 1
+#   min_new: 1.5
+#   max_new: 1.5
+#   time_value: 1
+#   time_interval: MyString
+#   alert_at: 2017-08-24 10:52:19
 
-two:
-  time: 2017-08-24 10:52:19
-  currency: MyString
-  start_value: 1
-  min_new: 1.5
-  max_new: 1.5
-  time_value: 1
-  time_interval: MyString
-  alert_at: 2017-08-24 10:52:19
+# two:
+#   time: 2017-08-24 10:52:19
+#   currency: MyString
+#   start_value: 1
+#   min_new: 1.5
+#   max_new: 1.5
+#   time_value: 1
+#   time_interval: MyString
+#   alert_at: 2017-08-24 10:52:19

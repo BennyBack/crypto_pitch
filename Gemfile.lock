@@ -169,6 +169,10 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.1.3)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.2)
+      actionpack (~> 5.x, >= 5.0.1)
+      actionview (~> 5.x, >= 5.0.1)
+      activesupport (~> 5.x)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -268,6 +272,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3)
   listen (>= 3.0.5, < 3.2)
+  nokogiri (~> 1.8)
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
@@ -275,6 +280,7 @@ DEPENDENCIES
   pry
   puma (~> 3.7)
   rails (~> 5.1.3)
+  rails-controller-testing (~> 1.0)
   rails-erd
   railties (~> 5.0)
   sass-rails (~> 5.0)

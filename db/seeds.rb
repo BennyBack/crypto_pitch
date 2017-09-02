@@ -15,7 +15,16 @@ password = "password"
     "email": Faker::Internet.email,
     "phone_number": Faker::PhoneNumber.phone_number,
     "password": "password",
-    "password_digest": "password",
+    "password_digest": BCrypt::Password.create("password")
     )
   end
+
+User.create!(
+  "first_name": 'Z',
+  "last_name": 'S',
+  "email": 'zannain@wyncode.co',
+  "phone_number": Faker::PhoneNumber.phone_number,
+  "password": "password",
+  "password_digest": BCrypt::Password.create("password")
+)
 puts "Seed file complete"
