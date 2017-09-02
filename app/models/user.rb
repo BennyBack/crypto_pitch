@@ -7,13 +7,12 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
   format: { with: VALID_EMAIL_REGEX },
   uniqueness: { case_sensitive: false }
-  validates :phone_number, 
+  validates :phone_number, phone: true
       presence: true,
       uniqueness: true
-  validates :password, 
-      length: { minimum: 6 },
-      presence: true
-  has_secure_password
+      has_secure_password
+      validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+     
   has_many :alerts
 
   def User.new_token
@@ -32,13 +31,13 @@ class User < ApplicationRecord
   end
 
   def authenticated?(remember_token)
-    return false if remember_digest.nil?
-    Bcrypt::Password.new(remember_digest).is_password?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
   def forget
     update_attribute(:remember_digest, nil)
   end
+
 
 
 end

@@ -25,9 +25,10 @@
             <%= link_to "About", about_path, class:'nav-link nav-item' %>
           <% if logged_in? %>
             <%= link_to "Settings", edit_user_path(current_user), class:'nav-link nav-item' %>
-            <%= link_to "Dashboard", current_user, class:'nav-link nav-item' %>
+            <%= link_to "Dashboard", user_alerts_path(current_user), class:'nav-link nav-item' %>
             <%= link_to "Alerts", search_path, class:'nav-link nav-item' %>
             <%= link_to "Logout", logout_path,  method: :delete , class:'nav-link nav-item' %>
+            <%= link_to "Profile", user_path(current_user), class: 'nav-link nav-item' %>
           <% else %>
             <%# link_to "Login", login_path, remote: tru class:'nav-link nav-item' %>
             <%= link_to "Login", login_path, class:'nav-link nav-item' %>            
