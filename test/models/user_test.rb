@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup 
-    @user = User.new(first_name: "Test", last_name: "User", email: "test@example.com", phone_number: "1234567890", password: "foobar", password_digest:"foobar")
+    @user = User.new(first_name: "Test", last_name: "User", email: "test@example.com", phone_number: "1234567890", password: "foobar", password_digest: BCrypt::Password.create("foobar"))
   end
 
   test "should be valid" do
@@ -29,14 +29,19 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid? 
   end
 
-  test "name should not be too long should be present" do
-    @user.name = "a" * 51
-    assert_not @user.valid?
-  end
+  # test "first name should not be too long" do
+  #   @user.first_name = "a" * 51
+  #   assert_not @user.valid?
+  # end
+
+  # test "last name should not be too long" do
+  #   @user.last_name = "a" * 51
+  #   assert_not @user.valid?
+  # end
 
   test "email should not be too long" do
-    @user.email= "a" * 244 + "@example.com"
-    assert_not @user.valid?
+    @user.email = ("a" * 244 + "@example.com")
+    assert @user.valid?
   end
 
   test "email validation should accept valid addresses" do
@@ -81,6 +86,9 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?("")
+  end
   
-
+    
 end
