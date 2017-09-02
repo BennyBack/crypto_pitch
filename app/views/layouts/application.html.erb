@@ -30,8 +30,7 @@
             <%= link_to "Logout", logout_path,  method: :delete , class:'nav-link nav-item' %>
             <%= link_to "Profile", user_path(current_user), class: 'nav-link nav-item' %>
           <% else %>
-            <%# link_to "Login", login_path, remote: tru class:'nav-link nav-item' %>
-            <%= link_to "Login", login_path, class:'nav-link nav-item' %>            
+            <%= link_to "Login", login_path, remote: true, class:'nav-link nav-item' %>
             <%= link_to "Sign Up", signup_path, class:'nav-link nav-item' %>
             <%# link_to "Sign Up", signup_path, remote:true, class:'nav-link nav-item' %>
           <% end %>
