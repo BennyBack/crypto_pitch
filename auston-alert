@@ -2,3 +2,8 @@
     1a. rake task should retrieve current prices
     1b. rake task should retrieve all relevant alerts
     1c. rake task should compare alerts to current prices and send messages for matching pairs
+
+    if CURRENT PRICE <= CURRENT_USER.ALERT_MIN
+rake db:setup
+
+￼￼￼￼

@@ -9,10 +9,11 @@
 password = "password"
 
 20.times do |x|
-  u =User.create!(
+  User.create!(
     "first_name": Faker::Name.unique.name.split(" ").first,
     "last_name": Faker::Name.unique.name.split(" ").last,
     "email": Faker::Internet.email,
+    "profile_pic": "http://via.placeholder.com/600x400",
     "phone_number": Faker::PhoneNumber.phone_number,
     "password": "password",
     "password_digest": BCrypt::Password.create("password")
@@ -23,6 +24,7 @@ User.create!(
   "first_name": 'Z',
   "last_name": 'S',
   "email": 'zannain@wyncode.co',
+  "profile_pic": "http://via.placeholder.com/600x400",
   "phone_number": Faker::PhoneNumber.phone_number,
   "password": "password",
   "password_digest": BCrypt::Password.create("password")

@@ -1,5 +1,6 @@
-<div class="user_show">
-<h2><%= @user.first_name + " " + @user.last_name %></h2>
-<h3><%= @user.phone_number %></h3>
-<h4><%= @user.email.inspect %></h4>
+<div class="z_div">
+<%= image_tag current_user.profile_pic, class: "pb-4" %>
+<h2>Name: <%= "#{current_user.first_name + current_user.last_name}" %></h2>
+<h3>Phone number:<%= current_user.phone_number %></h3>
+<h4>Email: <%= current_user.email %></h4>
 </div>

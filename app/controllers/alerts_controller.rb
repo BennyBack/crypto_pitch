@@ -17,14 +17,15 @@ class AlertsController < ApplicationController
   @alert = Alert.new(alert_params)
   @alert.user = current_user
    if @alert.save
-    redirect_to user_alerts_path(current_user, @alert), notice: 'Task was successfully created.'
+    redirect_to user_alerts_path(current_user, @alert)
    end
   end
 
   def new
     @currency = params[:currency]
-  end
-   
+    @currency_value = params[:currency_value]
+    # @currency = params(:currency).permit(:currency, :currency_value)
+  end    
   def show
   end
 
@@ -49,6 +50,6 @@ class AlertsController < ApplicationController
   end
   
   def alert_params
-    params.require(:alert).permit(:time, :currency, :start_value, :min_new, :max_new, :time_value, :time_interval)
+    params.require(:alert).permit(:time, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval)
   end
 end

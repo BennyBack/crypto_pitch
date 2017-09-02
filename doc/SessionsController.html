@@ -196,6 +196,11 @@
   
   
   
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#correct_user-instance_method" title="ApplicationController#correct_user (method)">#correct_user</a></span>, <span class='object_link'><a href="ApplicationController.html#logged_in_user-instance_method" title="ApplicationController#logged_in_user (method)">#logged_in_user</a></span></p>
+
+  
+  
   
   
   
@@ -203,7 +208,7 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="SessionsHelper.html" title="SessionsHelper (module)">SessionsHelper</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="SessionsHelper.html#current_user-instance_method" title="SessionsHelper#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="SessionsHelper.html#forget-instance_method" title="SessionsHelper#forget (method)">#forget</a></span>, <span class='object_link'><a href="SessionsHelper.html#log_in-instance_method" title="SessionsHelper#log_in (method)">#log_in</a></span>, <span class='object_link'><a href="SessionsHelper.html#log_out-instance_method" title="SessionsHelper#log_out (method)">#log_out</a></span>, <span class='object_link'><a href="SessionsHelper.html#logged_in%3F-instance_method" title="SessionsHelper#logged_in? (method)">#logged_in?</a></span>, <span class='object_link'><a href="SessionsHelper.html#remember-instance_method" title="SessionsHelper#remember (method)">#remember</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="SessionsHelper.html#current_user-instance_method" title="SessionsHelper#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="SessionsHelper.html#current_user%3F-instance_method" title="SessionsHelper#current_user? (method)">#current_user?</a></span>, <span class='object_link'><a href="SessionsHelper.html#forget-instance_method" title="SessionsHelper#forget (method)">#forget</a></span>, <span class='object_link'><a href="SessionsHelper.html#log_in-instance_method" title="SessionsHelper#log_in (method)">#log_in</a></span>, <span class='object_link'><a href="SessionsHelper.html#log_out-instance_method" title="SessionsHelper#log_out (method)">#log_out</a></span>, <span class='object_link'><a href="SessionsHelper.html#logged_in%3F-instance_method" title="SessionsHelper#logged_in? (method)">#logged_in?</a></span>, <span class='object_link'><a href="SessionsHelper.html#redirect_back_or-instance_method" title="SessionsHelper#redirect_back_or (method)">#redirect_back_or</a></span>, <span class='object_link'><a href="SessionsHelper.html#remember-instance_method" title="SessionsHelper#remember (method)">#remember</a></span>, <span class='object_link'><a href="SessionsHelper.html#store_location-instance_method" title="SessionsHelper#store_location (method)">#store_location</a></span></p>
 
   
 
@@ -246,7 +251,7 @@
   <span class='kw'>if</span> <span class='ivar'>@user</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_authenticate'>authenticate</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:session</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:password</span><span class='rbracket'>]</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_log_in'>log_in</span> <span class='ivar'>@user</span>
     <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:session</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:remember_me</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1</span><span class='tstring_end'>&#39;</span></span> <span class='op'>?</span> <span class='id identifier rubyid_remember'>remember</span><span class='lparen'>(</span><span class='ivar'>@user</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_forget'>forget</span><span class='lparen'>(</span><span class='ivar'>@user</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='ivar'>@user</span>
+    <span class='id identifier rubyid_redirect_back_or'>redirect_back_or</span> <span class='ivar'>@user</span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_flash'>flash</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='lbracket'>[</span><span class='symbol'>:danger</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Invalid email/password combination</span><span class='tstring_end'>&#39;</span></span>
     <span class='id identifier rubyid_render'>render</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>new</span><span class='tstring_end'>&#39;</span></span>
@@ -324,7 +329,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Sep  2 02:15:26 2017 by
+  Generated on Sat Sep  2 15:36:47 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>

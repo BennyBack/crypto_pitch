@@ -262,6 +262,11 @@
   
   
   
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#correct_user-instance_method" title="ApplicationController#correct_user (method)">#correct_user</a></span>, <span class='object_link'><a href="ApplicationController.html#logged_in_user-instance_method" title="ApplicationController#logged_in_user (method)">#logged_in_user</a></span></p>
+
+  
+  
   
   
   
@@ -269,7 +274,7 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="SessionsHelper.html" title="SessionsHelper (module)">SessionsHelper</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="SessionsHelper.html#current_user-instance_method" title="SessionsHelper#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="SessionsHelper.html#forget-instance_method" title="SessionsHelper#forget (method)">#forget</a></span>, <span class='object_link'><a href="SessionsHelper.html#log_in-instance_method" title="SessionsHelper#log_in (method)">#log_in</a></span>, <span class='object_link'><a href="SessionsHelper.html#log_out-instance_method" title="SessionsHelper#log_out (method)">#log_out</a></span>, <span class='object_link'><a href="SessionsHelper.html#logged_in%3F-instance_method" title="SessionsHelper#logged_in? (method)">#logged_in?</a></span>, <span class='object_link'><a href="SessionsHelper.html#remember-instance_method" title="SessionsHelper#remember (method)">#remember</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="SessionsHelper.html#current_user-instance_method" title="SessionsHelper#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="SessionsHelper.html#current_user%3F-instance_method" title="SessionsHelper#current_user? (method)">#current_user?</a></span>, <span class='object_link'><a href="SessionsHelper.html#forget-instance_method" title="SessionsHelper#forget (method)">#forget</a></span>, <span class='object_link'><a href="SessionsHelper.html#log_in-instance_method" title="SessionsHelper#log_in (method)">#log_in</a></span>, <span class='object_link'><a href="SessionsHelper.html#log_out-instance_method" title="SessionsHelper#log_out (method)">#log_out</a></span>, <span class='object_link'><a href="SessionsHelper.html#logged_in%3F-instance_method" title="SessionsHelper#logged_in? (method)">#logged_in?</a></span>, <span class='object_link'><a href="SessionsHelper.html#redirect_back_or-instance_method" title="SessionsHelper#redirect_back_or (method)">#redirect_back_or</a></span>, <span class='object_link'><a href="SessionsHelper.html#remember-instance_method" title="SessionsHelper#remember (method)">#remember</a></span>, <span class='object_link'><a href="SessionsHelper.html#store_location-instance_method" title="SessionsHelper#store_location (method)">#store_location</a></span></p>
 
   
 
@@ -311,7 +316,7 @@
 </span><span class='ivar'>@alert</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Alert.html" title="Alert (class)">Alert</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_alert_params'>alert_params</span><span class='rparen'>)</span>
 <span class='ivar'>@alert</span><span class='period'>.</span><span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span>
  <span class='kw'>if</span> <span class='ivar'>@alert</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
-  <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_user_alerts_path'>user_alerts_path</span><span class='lparen'>(</span><span class='id identifier rubyid_current_user'>current_user</span><span class='comma'>,</span> <span class='ivar'>@alert</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='label'>notice:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Task was successfully created.</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_user_alerts_path'>user_alerts_path</span><span class='lparen'>(</span><span class='id identifier rubyid_current_user'>current_user</span><span class='comma'>,</span> <span class='ivar'>@alert</span><span class='rparen'>)</span>
  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -396,14 +401,18 @@
 
 24
 25
-26</pre>
+26
+27
+28</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/alerts_controller.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
   <span class='ivar'>@currency</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:currency</span><span class='rbracket'>]</span>
-<span class='kw'>end</span></pre>
+  <span class='ivar'>@currency_value</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:currency_value</span><span class='rbracket'>]</span>
+  <span class='comment'># @currency = params(:currency).permit(:currency, :currency_value)
+</span><span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -424,11 +433,11 @@
       <pre class="lines">
 
 
-28
-29</pre>
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/alerts_controller.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/alerts_controller.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
 <span class='kw'>end</span></pre>
@@ -452,14 +461,14 @@
       <pre class="lines">
 
 
-31
 32
 33
 34
-35</pre>
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/alerts_controller.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/alerts_controller.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
   <span class='kw'>if</span> <span class='ivar'>@alert</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_alert_params'>alert_params</span><span class='rparen'>)</span>
@@ -476,7 +485,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Sep  2 02:15:26 2017 by
+  Generated on Sat Sep  2 15:36:47 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
