@@ -1,31 +1,6 @@
-<%=  form_for(@user) do |f| %>
-    <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
-    </div>
+<% provide(:button_text, 'Create my account') %>
 
-    <div>
-    <%= f.label :email %>
-    <%= f.text_field :email, class: "form-control" %>
-    </div>
-
-    <div>
-    <%= f.label :phone_number%>
-    <%= f.text_field :phone_number, class: "form-control"%>
-    </div>
-
-    <div>
-    <%= f.label :password %>
-    <%= f.text_field :password, class: "form-control" %>
-    </div>
-
-    <div>
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.text_field :password_confirmation, class: "form-control" %>
-    </div>
-
-    <div>
-    <%= f.submit "Create my account", class: 'btn btn-primary' %>
-    </div>
-    <% end %>
-    </div>
+<div class="container new_user">
+<h4>Sign Up</h4>
+<%= render 'form' %>    
+</div>

@@ -55,3 +55,9 @@ gem "bootstrap-sass"
 
 # Added at 2017-08-30 13:52:36 -0400 by zannain:
 gem "faker", "~> 1.8"
+
+# Added at 2017-09-01 19:33:43 -0400 by zannain:
+gem "rails-controller-testing", "~> 1.0"
+
+# Added at 2017-09-01 19:35:59 -0400 by zannain:
+gem "nokogiri", "~> 1.8"
