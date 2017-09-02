@@ -285,9 +285,9 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_current_user'>current_user</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-    <span class='ivar'>@current_user</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="User.html" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_by'>find_by</span><span class='lparen'>(</span><span class='label'>id:</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='ivar'>@current_user</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="User.html" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_by'>find_by</span><span class='lparen'>(</span><span class='label'>id:</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
   <span class='kw'>elsif</span> <span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_cookies'>cookies</span><span class='period'>.</span><span class='id identifier rubyid_signed'>signed</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_raise'>raise</span> 
+    <span class='id identifier rubyid_raise'>raise</span>
     <span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="User.html" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_by'>find_by</span><span class='lparen'>(</span><span class='label'>id:</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_user'>user</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_authenticated?'>authenticated?</span><span class='lparen'>(</span><span class='id identifier rubyid_cookies'>cookies</span><span class='lbracket'>[</span><span class='symbol'>:remember_token</span><span class='rbracket'>]</span><span class='rparen'>)</span>
       <span class='id identifier rubyid_log_in'>log_in</span> <span class='id identifier rubyid_user'>user</span>
@@ -326,14 +326,14 @@
       <pre class="lines">
 
 
-28
 29
 30
 31
-32</pre>
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/sessions_helper.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/sessions_helper.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_forget'>forget</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_forget'>forget</span>
@@ -401,14 +401,14 @@
       <pre class="lines">
 
 
-38
 39
 40
 41
-42</pre>
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/sessions_helper.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/sessions_helper.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log_out'>log_out</span>
    <span class='id identifier rubyid_forget'>forget</span><span class='lparen'>(</span><span class='id identifier rubyid_current_user'>current_user</span><span class='rparen'>)</span>
@@ -459,12 +459,12 @@
       <pre class="lines">
 
 
-34
 35
-36</pre>
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/sessions_helper.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/sessions_helper.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_logged_in?'>logged_in?</span>
   <span class='op'>!</span><span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -524,7 +524,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Sep  2 01:11:39 2017 by
+  Generated on Sat Sep  2 02:03:20 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
