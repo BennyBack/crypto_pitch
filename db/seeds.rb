@@ -2,7 +2,6 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
-#
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
@@ -42,7 +41,7 @@ user.each do |user|
     Alert.create(
       user_id: user.id,
       currency: Alert.find_currency.sample['name'],
-      currency_value: Alert.find_currency.sample['price'].to_i      
+      curreency_value: Alert.find_currency.sample['price'].to_i      
       min_new: Alert.find_currency.sample['price'].to_i + Random.rand(1...500),
       max_new: Alert.find_currency.sample['price'].to_i + Random.rand(501...1000)
       )
