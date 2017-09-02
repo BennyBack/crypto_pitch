@@ -31,6 +31,11 @@ User.create!(
   "password_digest": BCrypt::Password.create("password")
 )
 
+crypto_alert = 
+
+
+
+
 users = User.all
 user.each do |user|
   5.times do
@@ -38,8 +43,8 @@ user.each do |user|
       user_id: user.id,
       currency: Alert.find_currency.sample['name'],
       currency_value: Alert.find_currency.sample['price'].to_i      
-      min_new: Alert.find_currency.sample['price'].to_i + Random.rand(501...1000)
-      max_new: Alert.find_currency.sample['price'].to_i + Random.rand(1...500),
+      min_new: Alert.find_currency.sample['price'].to_i + Random.rand(1...500),
+      max_new: Alert.find_currency.sample['price'].to_i + Random.rand(501...1000)
       )
   end
 end
