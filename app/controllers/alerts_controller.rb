@@ -3,8 +3,11 @@ class AlertsController < ApplicationController
   before_action :set_alert, only: [:show, :edit, :update, :destroy]
   before_action :new_alert, only: [:index, :new]
 
-  def index
+  def search
     @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=5")
+  end
+
+  def index
   end
 
   def dashboard
@@ -18,6 +21,7 @@ class AlertsController < ApplicationController
   @alert.user = current_user
    if @alert.save
     redirect_to user_alerts_path(current_user, @alert)
+    flash[:success] = "Alert created!"
    end
   end
 
@@ -35,8 +39,7 @@ class AlertsController < ApplicationController
     end
   end
 
-  private
-
+  private   
   def set_alert
     @alert = Alert.find(params[:id])
   end
@@ -50,6 +53,6 @@ class AlertsController < ApplicationController
   end
   
   def alert_params
-    params.require(:alert).permit(:time, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval)
+    params.require(:alert).permit(:alert_time, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval)
   end
 end

@@ -1,5 +1,5 @@
 app/models/user.rb ddba69570056b2d5e38ab58e8adbdcd82dfe6aa2
-app/models/alert.rb cdae6ee58a9ff715558fc6c2b8ab4991b3bfb455
+app/models/alert.rb 513998d4d93678b18efd785bf5ee5dc2fc6b5af5
 lib/message_sender.rb 3ec66902afc6e3961560c3a3db3301ab20a663e7
 app/helpers/users_helper.rb 4957066bcb0fa49423c7ae0fd83bc3b9e28a5ec7
 app/models/authorization.rb 8d4344ade4e0a0cde7d5dd05c65cbbd699625abe
@@ -12,7 +12,7 @@ app/mailers/application_mailer.rb d8f3c8a175c9b44ee0ed7e8120eb5ca3c252d1cb
 app/controllers/users_controller.rb e218b927e5cf06a2a630899b41b6e00076931a2f
 app/helpers/jobs/application_job.rb 9a24c3e30cfb517943d8774df4695ba794bfd69d
 app/helpers/registrations_helper.rb 37b2a26d7a107fb24d0dc648ad6d739722dfec0f
-app/controllers/alerts_controller.rb d12b39d1e8031757f4eb01dbd77ce7d4cf6b1636
+app/controllers/alerts_controller.rb 542a843dd767edcd2a8f720a13c5ba768ffd71de
 app/controllers/static_controller.rb eaf5662fd0658218d6b154fc234981552bc9dabc
 app/controllers/sessions_controller.rb d1f3c4a8ad6e6df395d5918fecd246df7944234e
 app/channels/application_cable/channel.rb 54156ee2853cfdea4e3147cdb260776b8d90b646

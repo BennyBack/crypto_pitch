@@ -18,6 +18,7 @@ password = "password"
     "password": "password",
     "password_digest": BCrypt::Password.create("password")
     )
+    
   end
 
 User.create!(
@@ -29,4 +30,19 @@ User.create!(
   "password": "password",
   "password_digest": BCrypt::Password.create("password")
 )
+
+users = User.all
+user.each do |user|
+  5.times do
+    Alert.create(
+      user_id: user.id,
+      currency: Alert.find_currency.sample['name'],
+      currency_value: Alert.find_currency.sample['price'].to_i      
+      min_new: Alert.find_currency.sample['price'].to_i + Random.rand(501...1000)
+      max_new: Alert.find_currency.sample['price'].to_i + Random.rand(1...500),
+      )
+  end
+end
+
+
 puts "Seed file complete"
