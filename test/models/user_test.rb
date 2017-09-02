@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup 
-    @user = User.new(first_name: "Test", last_name: "User", email: "test@example.com", phone_number: "1234567890", password: "foobar", password_digest:"foobar")
+    @user = User.new(first_name: "Test", last_name: "User", email: "test@example.com", phone_number: "1234567890", password: "foobar", password_digest: BCrypt::Password.create("foobar"))
   end
 
   test "should be valid" do
