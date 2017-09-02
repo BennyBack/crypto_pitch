@@ -10,18 +10,12 @@ password = "password"
 
 20.times do |x|
   u =User.create!(
-    "name": Faker::Name.name,
+    "first_name": Faker::Name.unique.name.split(" ").first,
+    "last_name": Faker::Name.unique.name.split(" ").last,
     "email": Faker::Internet.email,
     "phone_number": Faker::PhoneNumber.phone_number,
     "password": "password",
-    "password_confirmation": "password",
+    "password_digest": "password",
     )
-
-  Alert.create!(
-    "time": Time.now,
-    "currency": Alert.find_currency,
-    'start_value': Alert.find_start_value,
-    'user_id': u
-  )
   end
 puts "Seed file complete"

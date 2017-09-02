@@ -1,29 +1,51 @@
 @import "bootstrap";
 .navbar-inverse .navbar-brand {
-  text-transform: uppercase;
-  font-family: 'Monoton', cursive;
-  color: white;
-  font-size: 1em;
-  align-content: center;
-  margin-top: 9px;
-  margin-left: 6px;
+    text-transform: uppercase;
+    font-family: 'Monoton', cursive;
+    color: white;
+    font-size: 1em;
+    align-content: center;
+    margin-top: 9px;
+    margin-left: 6px;
 }
 
 @media only screen and (min-width: 415px) {
-  .navbar-expand-sm {
-    min-width: 100%;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
-    border-bottom: solid .5px white;
-  }
+    .navbar-expand-sm {
+        min-width: 100%;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        border-bottom: solid .5px white;
+    }
 }
 
 #navbarSupportedContent ul li a {
-  color: white;
+    color: white;
+}
+
+.navbar-toggler {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.alert-inputs {
+    padding-bottom: 10px;
+}
+
+$black-medium-light: #333;
+@mixin box_sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
+/* miscellaneous */
 
-.navbar-toggler  {
-  background-color: rgba(0,0,0,.7);
+.debug_dump {
+    background-color: $black-medium-light;
+    color: white;
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+    @include box_sizing;
 }
