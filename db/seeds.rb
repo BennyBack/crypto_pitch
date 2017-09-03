@@ -18,13 +18,18 @@ password = "password"
 end
 
 users = User.all
+store_crypto_name_and_value = Alert.find_currency
+sleep 10
 users.each do |user|
-  store_crypto_name_and_value = Alert.find_currency
+    time_interval = ['Hour[s]','Day[s]','Week[s]'].sample
       Alert.create(
       user_id: user.id,
       currency: store_crypto_name_and_value['name'],
-      currency_value: store_crypto_name_and_value['price'].to_i,
-      min_new: store_crypto_name_and_value['price'].to_i,
-      max_new: store_crypto_name_and_value['price'].to_i,
-      time_interval:['Hour[s]','Day[s]','Week[s]'][Random.rand(1..3)])
+      currency_value: store_crypto_name_and_value['price'],
+      min_new: (store_crypto_name_and_value['price'].to_f * 0.8).round(2),
+      max_new: (store_crypto_name_and_value['price'].to_f * 1.2).round(2),
+      time_interval:time_interval,
+      time_value: Alert.get_time_value(time_interval)
+      )
 end
+puts "Seed file complete"

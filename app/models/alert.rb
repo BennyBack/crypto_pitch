@@ -11,8 +11,9 @@ class Alert < ApplicationRecord
     return opts
   end
 
-  def get_value(time_interval)
-    case time_interval
+  def self.get_time_value(interval)
+    
+    case interval
     when "Hour[s]" then time_value= Random.rand(1..24)
     when 'Day[s]' then time_value= Random.rand(1..7)
     when 'Week[s]' then time_value= Random.rand(1..4)
