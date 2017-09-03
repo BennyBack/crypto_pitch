@@ -15,7 +15,7 @@
 
 
 <div class="min_new row alert-inputs">
-  <%= f.text_field :min_new, class: "form-control", placeholder: "Min new" %>
+  <%= f.number_field :min_new, min:"(#{@currency_value})" class: "form-control", placeholder: "Min new" %>
 </div>
 
 <div class="max_new row alert-inputs">
@@ -30,12 +30,12 @@
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Hours</a>
           <a class="dropdown-item" href="#">Days</a>
-          <a class="dropdown-item" href="#">Weeks</a>          
+          <a class="dropdown-item" href="#">Weeks</a>
         </div>
       </div>
   <%= f.text_field :time_interval, class: "form-control", placeholder: "Time Value" %>
 </div>
-  
+
 
 </div>
 

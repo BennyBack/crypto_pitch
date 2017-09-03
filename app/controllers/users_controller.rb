@@ -2,12 +2,12 @@ class UsersController < ApplicationController
     before_action :logged_in_user, only: [:edit, :update]
     before_action :correct_user, only: [:edit, :update]
     # before_action :set_user, only: [:show, :edit, :update]
-    
 
-    def index 
+
+    def index
     end
 
-    
+
     def new
         @user = User.new
     end
@@ -22,14 +22,14 @@ class UsersController < ApplicationController
             render 'new'
         end
     end
-    
-    
+
+
     def show
     end
 
     def edit
     end
-    
+
     def update
         if @user.update_attributes(user_params)
             flash[:success] = "Success Updated Profile"
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :password, :password_confirmation)
+        params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :password, :password_confirmation, :profile_pic)
     end
 
 
