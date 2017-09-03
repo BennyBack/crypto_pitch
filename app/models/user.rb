@@ -14,6 +14,8 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: false
 
   has_many :alerts
+  has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
 
   def self.new_token
     SecureRandom.urlsafe_base64
@@ -23,6 +25,10 @@ class User < ApplicationRecord
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  def show
+    render alerts: 'dashboard'
   end
 
   def remember

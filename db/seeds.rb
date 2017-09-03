@@ -16,33 +16,31 @@ password = "password"
     "profile_pic": "http://via.placeholder.com/600x400",
     "phone_number": Faker::PhoneNumber.phone_number,
     "password": "password",
-    "password_digest": BCrypt::Password.create("password")
-    )
-    
-  end
+    "password_digest": BCrypt::Password.create("password"),)
 
-User.create!(
-  "first_name": 'Z',
-  "last_name": 'S',
-  "email": 'zannain@wyncode.co',
-  "profile_pic": "http://via.placeholder.com/600x400",
-  "phone_number": Faker::PhoneNumber.phone_number,
-  "password": "password",
-  "password_digest": BCrypt::Password.create("password")
-)
-
-users = User.all
-user.each do |user|
-  5.times do
-    Alert.create(
-      user_id: user.id,
-      currency: Alert.find_currency.sample['name'],
-      currency_value: Alert.find_currency.sample['price'].to_i      
-      min_new: Alert.find_currency.sample['price'].to_i + Random.rand(501...1000)
-      max_new: Alert.find_currency.sample['price'].to_i + Random.rand(1...500),
-      )
-  end
 end
-
-
-puts "Seed file complete"
+  # User.create!
+  #   "first_name": 'Z',
+  #   "last_name": 'S',
+  #   "email": 'zannain@wyncode.co',
+  #   "profile_pic": "http://via.placeholder.com/600x400",
+  #   "phone_number": Faker::PhoneNumber.phone_number,
+  #   "password": "password",
+  #   "password_digest": BCrypt::Password.create("password")
+  # )
+  #
+  # users = User.all
+  # user.each do |user|
+  #   5.times do
+  #     Alert.create(
+  #       user_id: user.id,
+  #       currency: Alert.find_currency.sample['name'],
+  #       currency_value: Alert.find_currency.sample['price'].to_i
+  #       min_new: Alert.find_currency.sample['price'].to_i + Random.rand(501...1000)
+  #       max_new: Alert.find_currency.sample['price'].to_i + Random.rand(1...500),
+  #       )
+  #   end
+  # end
+  #
+  #
+  # puts "Seed file complete"
