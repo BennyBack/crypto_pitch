@@ -9,7 +9,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'dotenv-rails'
 gem 'twilio-ruby'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '>= 3.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'rails-erd'
 gem 'coffee-rails', '~> 4.2'
@@ -21,7 +21,8 @@ gem 'hirb'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
-gem 'therubyracer'
+gem 'jquery-ui-rails'
+gem "therubyracer"
 gem 'devise-bootstrap-views'
 gem 'font-awesome-sass'
 gem 'httparty'
@@ -36,8 +37,11 @@ gem 'faker', '~> 1.8'
 gem 'rails-controller-testing', '~> 1.0'
 gem 'nokogiri', '~> 1.8'
 gem 'local_time'
+gem 'httparty'
+gem 'popper_js'
 gem 'aws-sdk'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
@@ -46,7 +50,11 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'pry-rails'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+# Added at 2017-09-02 23:57:42 -0400 by zannain:
+gem "rufo", "~> 0.1.0"
