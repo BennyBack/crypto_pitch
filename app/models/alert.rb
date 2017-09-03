@@ -3,23 +3,21 @@ class Alert < ApplicationRecord
 
   def self.find_currency
     @currency = []
-    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=20")
-    @crypto.each do |result|
-      opts = {}
-      opts['price']=result['price_usd']
-      opts['name']=result['name']
-      @currency.push(opts)
-    end
-    return @currency
+    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=5")
+    rand_int = Random.rand(1..5)
+    opts = {}
+    opts['price']=@crypto[rand_int]['price_usd']
+    opts['name']=@crypto[rand_int]['name']
+    return opts
   end
 
-  def self.find_start_value
-    @currency_value = []
-    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/")
-    @crypto.each do |result|
-      @currency_value.push(result['price_usd'])
+  def self.get_time_value(interval)
+    
+    case interval
+    when "Hour[s]" then time_value= Random.rand(1..24)
+    when 'Day[s]' then time_value= Random.rand(1..7)
+    when 'Week[s]' then time_value= Random.rand(1..4)
     end
-    return @currency_value.sample
   end
 
 end

@@ -10,13 +10,7 @@ class AlertsController < ApplicationController
   def index
   end
 
-  def dashboard
-    
-  end
-
   def create
-  #  @alert = current_user.alerts.build(alert_params)
-# binding.pry
   @alert = Alert.new(alert_params)
   @alert.user = current_user
    if @alert.save
@@ -29,7 +23,8 @@ class AlertsController < ApplicationController
     @currency = params[:currency]
     @currency_value = params[:currency_value]
     # @currency = params(:currency).permit(:currency, :currency_value)
-  end    
+  end  
+    
   def show
   end
 
