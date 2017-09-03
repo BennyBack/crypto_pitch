@@ -172,6 +172,7 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     pg (0.21.0)
+    phonelib (0.6.13)
     popper_js (1.11.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -305,6 +306,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   paperclip!
   pg (~> 0.18)
+  phonelib
   pry
   puma (~> 3.7)
   rails (~> 5.1.3)
