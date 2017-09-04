@@ -44,37 +44,7 @@ class Alert < ApplicationRecord
     @crypto[0][value]
   end
 
-  def self.check_percentage(percent,alert)
-    case percent
-      when "days" then return  Alert.get_value( alert,'percent_change_24h')
-      when "weeks" then  Alert.get_value(alert, 'percent_change_7d')
-      when "hours" then Alert.get_value(alert, 'percent_change_1h')
-    end
-  end
 
-
-  def self.max_text_check(max,delta,original)
-    # add delta to @cumulative
-    @cumulative += delta
-    #if cumulative is <= max
-    if @cumulative <= max
-      return true
-    else
-      return false
-    end
-  end
-
-  def self.min_text_check(min, delta,original)
-    # add delta to @cumulative
-    @cumulative += delta
-    #if cumulative is >= min
-    if @cumulative >= min
-            return true
-    else
-      return false
-    end
-      #send text
-  end
 
 
 
