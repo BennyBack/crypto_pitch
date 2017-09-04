@@ -48,4 +48,11 @@ class Alert < ApplicationRecord
     end
   end
 
+  def self.expired?(expiration)
+    if expiration && (Time.now  > expiration)
+      @expired = true
+    else
+      @expired = false
+    end
+  end
 end

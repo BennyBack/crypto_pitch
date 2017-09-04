@@ -13,14 +13,18 @@ namespace :alerts do
        puts "The alert should be sent if the value rises to #{alert.max_new} at any point between #{alert.created_at} and #{future_interval} from now"
       end
       
-      # Create a method that sets expiration based on the user provided divided interval
+      # Create a method that sets expiration based on the user provided interval
       @expiration_date = Alert.expiration_timestamp(@alert.time_interval, @alert.time_value)
-      
-
-
+      puts "expiration date for this alert will be #{@expiration_date}"
+      # Creat a method taht checks if the alert has expired
+      @expired = Alert.expired?(@expiration_date)
+      if @expired
+        puts "Yes this alert is expired"
+      else
+        puts "Yes this alert is active"
       end
 
-  desc "TODO"
+    end
   task max: :environment do
   end
 
