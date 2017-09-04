@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"convert:ETI"+Mustermann::AST::Node::Capture#convert;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"-@see Mustermann::AST::Pattern#map_param ;TI"@!visibility private;T:
+@fileI"lib/mustermann/ast/node.rb;T:0@omit_headings_from_table_of_contents_below0F@I"#Mustermann::AST::Node::Capture;TcRDoc::NormalClass0

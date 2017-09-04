@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Myapp</title>
   <meta name=viewport content="width=device-width, initial-scale=1">
@@ -23,7 +24,47 @@
       <span class="icon-bar"</span>
         <span class="icon-bar"</span>
   </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<%= link_to "About", about_path, class:'nav-link text-white' %><a><span class="sr-only">(current)</span></a>
+					</li>
+					<% if logged_in? %>
+						<li class="nav-item">
+							<%= link_to "Search", search_path, class:'nav-link text-white' %>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+							  aria-expanded="false">
+		  Dashboard
+		</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<%= link_to "My Alerts", user_alerts_path(current_user), class: 'dropdown-item' %>
+									<%= link_to "Account Settings", edit_user_path(current_user), class: 'dropdown-item' %>
+							</div>
+						</li>
+						<li class="nav-item">
+							<%= link_to "Logout", logout_path,  method: :delete , class:'nav-link text-white' %>
+						</li>
+						<% else %>
+							<li class="nav-item">
+								<%= link_to "Login", login_path, class:'nav-link text-white nav-item' %>
+							</li>
+							<li class="nav-item">
+								<%= link_to "Sign Up", signup_path, class:'nav-link text-white nav-item' %>
+							</li>
+							<% end %>
+				</ul>
+	</nav>
+	<%# link_to "Login", login_path, remote: tru class:'nav-link text-white nav-item' %>
+
+
+
+		<%# link_to "Sign Up", signup_path, remote:true, class:'nav-link text-white nav-item' %>
+			<%# link_to "About", about_path, class:'nav-link text-white nav-item' %>
+
+<!--       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
             <%= link_to "About", about_path, class:'nav-link nav-item' %>
           <% if logged_in? %>
@@ -49,28 +90,18 @@
             <%# link_to "About", about_path, class:'nav-link nav-item' %>
         </div>
       </div>
-  </nav>
+  </nav> -->
 
 <%= yield %>
-
-
-
-
-  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-      </div>
-    </div>
-  </div>
+				<div class="container-fluid">
+					<% flash.each do |message_type, message| %>
+						<div class="alert alert-<%= message_type %>">
+							<%= message %>
+						</div>
+						<% end %>
+							<%= yield %>
+								<%= debug(params) if Rails.env.development? %>
+				</div>
 
   <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
