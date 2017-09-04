@@ -1,4 +1,4 @@
-<table class="table table-bordered table-hover table-responsive">
+<table id="alerts" class="table table-bordered table-hover table-responsive">
   <thead class="thead-default">
     <tr>
       <th>Symbol</th>
@@ -17,8 +17,8 @@
     <tbody>
 
       <% @crypto.each do |result| %>
-    <tr id="<%= result['symbol'] %>">
-    <td>
+       <tr id="<%= result['symbol'] %>">
+       <td>
       <a tabindex="0" class="btn  crypto-name" role="button" data-toggle="tooltip" data-placement="bottom" title="<%= result['name'] %>">
       <%= result['symbol'] %>
     </a>
@@ -57,3 +57,9 @@
         </div>
       </div>
     </div>
+
+<script type="text/javascript">
+$(document).on("turbolinks:load", function(){
+  $('#alerts').DataTable();
+});
+</script>

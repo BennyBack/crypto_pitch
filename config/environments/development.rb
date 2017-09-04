@@ -10,7 +10,6 @@ Rails.application.configure do
   config.eager_load = false
 
   config.paperclip_defaults = {
-  :storage => :s3,
   :s3_host_name => 'REMOVE_THIS_LINE_IF_UNNECESSARY',
   :bucket => 'cryptoalerts'
 }
