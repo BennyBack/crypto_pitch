@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170903004105) do
     t.string "password"
     t.string "password_digest"
     t.string "remember_digest"
+    t.text "profile_pic"
     t.string "profile_pic_file_name"
     t.string "profile_pic_content_type"
     t.integer "profile_pic_file_size"

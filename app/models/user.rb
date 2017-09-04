@@ -5,15 +5,13 @@ class User < ApplicationRecord
   #   validates :name, presence: true, length: { maximum: 50 }
   validates :first_name, :last_name, presence: true
   validates :email, presence: true, length: { maximum: 255 },
-
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :phone_number, phone: true,
+  validates :phone_number,
             presence: true,
             uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: false
-
 
   has_many :alerts
   has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
