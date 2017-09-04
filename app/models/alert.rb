@@ -3,8 +3,8 @@ class Alert < ApplicationRecord
 
   def self.find_currency
     @currency = []
-    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=5")
-    rand_int = Random.rand(1..5)
+    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=20")
+    rand_int = Random.rand(1..20)
     opts = {}
     opts['price']=@crypto[rand_int]['price_usd']
     opts['name']=@crypto[rand_int]['name']
@@ -12,11 +12,10 @@ class Alert < ApplicationRecord
   end
 
   def self.get_time_value(interval)
-    
     case interval
-    when "Hour[s]" then time_value= Random.rand(1..24)
-    when 'Day[s]' then time_value= Random.rand(1..7)
-    when 'Week[s]' then time_value= Random.rand(1..4)
+    when "hour" then time_value= Random.rand(1..24)
+    when 'day' then time_value= Random.rand(1..7)
+    when 'week' then time_value= Random.rand(1..4)
     end
   end
 

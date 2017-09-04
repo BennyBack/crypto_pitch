@@ -57,3 +57,6 @@ end
 
 # Added at 2017-09-02 23:57:42 -0400 by zannain:
 gem "rufo", "~> 0.1.0"
+
+# Added at 2017-09-03 18:47:20 -0400 by zannain:
+gem "money", "~> 6.9"
