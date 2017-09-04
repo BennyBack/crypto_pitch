@@ -1,33 +1,52 @@
 namespace :alerts do
   desc "User can receive alert based on MAX_NEW value"
   task min: :environment do
-    @user = User.all.sample
-    @user_name = @user.first_name + " " + @user.last_name
-    @alert = @user.alerts.first
-    @user.alerts.each do |alert|
-      future_interval  = alert.time_value.to_s + " " + alert.time_interval
-       puts "The users name is #{@user_name}"
-       puts "User created at alert at #{alert.created_at}"
-       puts "The cryptocurrency for which the alert is created is #{alert.currency}"
-       puts "The current value of  #{alert.currency} is #{alert.currency_value}"
-       puts "The alert should be sent if the value rises to #{alert.max_new} at any point between #{alert.created_at} and #{future_interval} from now"
-      end
-      
-      # Create a method that sets expiration based on the user provided interval
-      @expiration_date = Alert.expiration_timestamp(@alert.time_interval, @alert.time_value)
-      puts "expiration date for this alert will be #{@expiration_date}"
-      # Creat a method taht checks if the alert has expired
-      @expired = Alert.expired?(@expiration_date)
-      if @expired
-        puts "Yes this alert is expired"
-      else
-        puts "Yes this alert is active"
-      end
-
+    # check for expiration
+    alerts = Alert.all #get all alerts
+    @alert = alerts.last #get a random alert
+    expiration_interval = Alert.expiration_timestamp(@alert.time_interval, @alert.time_value)
+    expiration_date = Alert.expiration_timestamp(@alert.time_interval,@alert.time_value)
+    @expired = Alert.expired?(expiration_date)
+    unless @expired
+          users = User.all #taking all users
+      @user = users.last #randomly taking a user
+            username = @user. first_name + " " + @user.last_name #user name
+            present_value = Alert.get_value(@alert.currency, 'price_usd')
+            @alert.currency_value.to_f
+             new_percent_delta = Alert.check_percentage(@alert.time_interval,@alert.currency)
+             send_max = Alert.max_text_check(@alert.max_new,new_percent_delta.to_f, @alert.currency)
+             if send_max
+              puts "Send max test"
+             else
+              puts "Don't send max text"
+             end
+              send_min = Alert.min_text_check(@alert.min_new, new_percent_delta.to_f,@alert.currency)
+              if send_min
+                puts "Send min text"
+              else
+                puts "Don't send min text"
+              end
     end
+  end
+  
+  
+  # end
+  # end
+  
+  #    puts "The users name is #{username}"
+  #    puts "User created at alert at #{@alert.created_at}"
+  #    puts "The cryptocurrency for which the alert is created is #{@alert.currency}"
+  #    puts "The current value of  #{@alert.currency} is #{@alert.currency_value}"
+  #    puts "The alert should be sent if the value RISES #{@alert.max_new} percent at any point between #{@alert.created_at} and #{expiration_date} from now"
+  #    puts "OR"
+  #    puts "The alert should be sent if the value DROPS #{@alert.min_new} percent at any point between #{@alert.created_at} and #{expiration_date} from now"
+  #   end
+  
+  # end
+  desc "User can receive alert based on MAX_NEW value"
   task max: :environment do
   end
-
+  
 end
 
 

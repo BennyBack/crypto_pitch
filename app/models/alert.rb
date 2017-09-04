@@ -1,8 +1,11 @@
 class Alert < ApplicationRecord
   belongs_to :user
-  @@daily_percent = []
-  @@weekly_percent = []
-  @@hourly_percent = []
+  @percentage = {
+    :daily => :time,
+    :weekly => :weekly,
+    :hourly => :hourly
+  }
+  @cumulative = 0
 
 
   def self.find_currency
@@ -30,29 +33,53 @@ class Alert < ApplicationRecord
       when 'weeks' then @expiration_timestamp = Time.now + time_value.weeks
     end
   end
-  
-  def self.record_percent_change 
-    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=20")
-    @crypto.each do |crypto|
-      @@daily_percent.push({ name: crypto['name'], change_24h: crypto['percent_change_24h'], time: Time.now })
-      @@weekly_percent.push({ name: crypto['name'], change_7d: crypto['percent_change_7d'], time: Time.now })
-      @@hourly_percent.push({ name: crypto['name'], percent_change_1h: crypto['percent_change_1h'], time: Time.now })
-    end
-  end
-
-  def self.check_percentage(percent)
-    case percent
-      when "daily" then @@daily_percent
-      when "weekly" then @@weekly_percent
-      when "hourly" then @@hourly_percent
-    end
-  end
-
+  # Using the expiration_timestamp, compared aainst the present to determine if the alert has expired
   def self.expired?(expiration)
     if expiration && (Time.now  > expiration)
-      @expired = true
+       return true
     else
-      @expired = false
+      return false
     end
   end
+  
+  # gets the current value of the alert by querying the name of cryptocurrency
+  def self.get_value(name,value)
+    @crypto = (HTTParty.get("https://api.coinmarketcap.com/v1/ticker/#{name}/")).parsed_response 
+    @crypto[0][value]
+    end
+    
+  def self.check_percentage(percent,alert)
+    case percent
+      when "days" then return  Alert.get_value( alert,'percent_change_24h')
+      when "weeks" then  Alert.get_value(alert, 'percent_change_7d')
+      when "hours" then Alert.get_value(alert, 'percent_change_1h')
+    end
+  end 
+
+ 
+  def self.max_text_check(max,delta,original)
+    # add delta to @cumulative
+    @cumulative += delta
+    #if cumulative is <= max
+    if @cumulative <= max
+      return true
+    else
+      return false
+    end
+  end
+  
+  def self.min_text_check(min, delta,original)
+    # add delta to @cumulative
+    @cumulative += delta    
+    #if cumulative is >= min 
+    if @cumulative >= min
+            return true
+    else
+      return false
+    end
+      #send text
+  end 
+
+
+  
 end
