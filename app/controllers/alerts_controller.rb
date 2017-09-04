@@ -11,7 +11,7 @@ class AlertsController < ApplicationController
   end
 
   def dashboard
-    
+
   end
 
   def create
@@ -29,7 +29,7 @@ class AlertsController < ApplicationController
     @currency = params[:currency]
     @currency_value = params[:currency_value]
     # @currency = params(:currency).permit(:currency, :currency_value)
-  end    
+  end
   def show
   end
 
@@ -39,7 +39,7 @@ class AlertsController < ApplicationController
     end
   end
 
-  private   
+  private
   def set_alert
     @alert = Alert.find(params[:id])
   end
@@ -51,7 +51,7 @@ class AlertsController < ApplicationController
   def all_alerts
     @alerts = Alert.all
   end
-  
+
   def alert_params
     params.require(:alert).permit(:alert_time, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval)
   end
