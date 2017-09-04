@@ -6,7 +6,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 password = "password"
-5.times do |x|
+@store_crypto_name_and_value = Alert.find_currency
+
+sleep 10
+20.times do |x|
   User.create(
     "first_name": Faker::Name.unique.name.split(" ").first,
     "last_name": Faker::Name.unique.name.split(" ").last,
@@ -18,18 +21,19 @@ password = "password"
 end
 
 users = User.all
-store_crypto_name_and_value = Alert.find_currency
-sleep 10
 users.each do |user|
-    time_interval = ['Hour[s]','Day[s]','Week[s]'].sample
+  time_interval = ['hours','days','weeks'].sample
       Alert.create(
       user_id: user.id,
-      currency: store_crypto_name_and_value['name'],
-      currency_value: store_crypto_name_and_value['price'],
-      min_new: (store_crypto_name_and_value['price'].to_f * 0.8).round(2),
-      max_new: (store_crypto_name_and_value['price'].to_f * 1.2).round(2),
+      currency: @store_crypto_name_and_value['name'],
+      currency_value: @store_crypto_name_and_value['price'],
+      min_new: (@store_crypto_name_and_value['price'].to_f),
+      # min_new: (@store_crypto_name_and_value['price'].to_f * 0.8).round(2),
+      max_new: (@store_crypto_name_and_value['price'].to_f),
+      # max_new: (@store_crypto_name_and_value['price'].to_f * 1.2).round(2),
       time_interval:time_interval,
       time_value: Alert.get_time_value(time_interval)
       )
 end
 puts "Seed file complete"
+
