@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
   def index
-    render static: 'index'
+    render 'index'
   end
 
   def about
