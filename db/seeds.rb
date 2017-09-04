@@ -22,7 +22,7 @@ end
 
 users = User.all
 users.each do |user|
-  time_interval = ['Hour[s]','Day[s]','Week[s]'].sample
+  time_interval = ['hours','days','weeks'].sample
       Alert.create(
       user_id: user.id,
       currency: @store_crypto_name_and_value['name'],
