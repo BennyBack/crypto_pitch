@@ -1,5 +1,4 @@
-
-<table class="table table-bordered table-hover table-responsive table-inverse">
+<table class="table table-bordered table-hover table-responsive">
   <thead class="thead-default">
     <tr>
       <th>Symbol</th>
@@ -16,7 +15,7 @@
       <th></th>
     </thead>
     <tbody>
-      
+
       <% @crypto.each do |result| %>
     <tr id="<%= result['symbol'] %>">
     <td>
@@ -34,12 +33,12 @@
     <td><%= result['percent_change_1h'] %></td>
     <td><%= result['percent_change_24h'] %></td>
     <td><%= result['percent_change_7d'] %></td>
-    <td><%= link_to "Alert Me", "#{new_user_alert_path(current_user)}?currency=#{result['name']}&currency_value=$#{result['price_usd']}", remote: true %></td>
+    <td id="alert_me"><%= link_to "Alert Me", "#{new_user_alert_path(current_user)}?currency=#{result['name']}&currency_value=$#{result['price_usd']}", remote: true %></td>
   </tr>%
       <% end %>
     </tbody>
   </table>
-  
+
     <div class="alert-modal modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -58,4 +57,3 @@
         </div>
       </div>
     </div>
-

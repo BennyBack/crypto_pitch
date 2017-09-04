@@ -1,3 +1,13 @@
 // Place all the styles related to the alerts controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.co
+
+.table {
+  font-family: 'Cormorant Unicase', serif;
+  border: solid 1px black;
+}
+
+
+#alert_me  a {
+  color: black;
+}

@@ -13,5 +13,12 @@
  *= require_tree .
  *= require_self
  */
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "bootstrap";
+
+.btn {
+  color: black !important;
+  background-color: ghostwhite !important;
+  border-color: black !important;
+}

@@ -1,23 +1,20 @@
 div {
   max-width: 100%;
 }
-
-body {
-  background: image-url("stockbackground.jpg") no-repeat center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+#navheader {
+  background: image-url("stockbackground.jpg")no-repeat center fixed;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   background-size: cover;
-  min-height: 100%;
+  background-repeat: no-repeat;
+}
+body {
+
 }
 @media screen and (min-width: 736px) {
   body {
-    background: image-url("stockbackground.jpg")no-repeat center fixed;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    background-size: cover;
-    background-repeat: no-repeat;
+
   }
 }
 
@@ -122,13 +119,25 @@ div#tswcontent {
   background-color: #fff;
 }
 
-div#header_container {}
+div#header_container {
+   margin-top: 100px;
+    background-color: rgba(0,0,0,.7);
+    background-size: cover;
+    height: 300px;
+    margin-bottom: 100px;
+    min-width: 100%;
+
+}
+
+
 @media only screen and (min-width:736px) {
   div#crypto_header {
     margin-top: 100px;
     background-color: rgba(0,0,0,.7);
+    background-size: cover;
     height: 300px;
     margin-bottom: 100px;
+    min-width: 100%;
   }
 }
 
@@ -145,7 +154,14 @@ div#header_container {}
   color: white;
 }
 
-div#crypto_header {}
+div#crypto_header {
+  margin-top: 100px;
+  background-color: rgba(0,0,0,.7);
+  background-size: cover;
+  height: 300px;
+  margin-bottom: 100px;
+  min-width: 100%;
+}
 
 .container {
   margin-right: auto;
@@ -225,7 +241,7 @@ header {
   background-color: white;
 }
 .homepage {
-  background: image-url("stockbackground.jpg") no-repeat center fixed;
+  background: image-url("stockbackground.jpg")no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

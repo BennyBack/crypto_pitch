@@ -8,6 +8,15 @@
     margin-left: 6px;
 }
 
+
+#navbarNavAltMarkup > div > li > a :hover {
+  color: white;
+}
+
+#navbarNavAltMarkup > div > li > a  {
+  color: white;
+}
+
 @media only screen and (min-width: 415px) {
     .navbar-expand-sm {
         min-width: 100%;
@@ -21,12 +30,16 @@
     color: white;
 }
 
+
 .navbar-toggler {
     background-color: rgba(0, 0, 0, .7);
 }
 
 .alert-inputs {
     padding-bottom: 10px;
+}
+.dropdown-menu {
+  width: 60px;
 }
 
 $black-medium-light: #333;
@@ -36,6 +49,22 @@ $black-medium-light: #333;
     box-sizing: border-box;
 }
 
+.nav-link {
+  color: white;
+  font-family: 'Marcellus SC', serif;
+  border: solid 1px;
+
+}
+
+.nav-link :hover {
+  color: blue;
+}
+
+
+#navbarNavAltMarkup > div > li > ul > a {
+  color: black;
+  text-decoration: none;
+}
 
 /* miscellaneous */
 
