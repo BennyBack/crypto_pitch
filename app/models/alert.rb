@@ -1,10 +1,11 @@
 class Alert < ApplicationRecord
   belongs_to :user
-  @@expiration_date
+  @@daily_percent = []
+  @@weekly_percent = []
+  @@hourly_percent = []
 
 
   def self.find_currency
-    @currency = []
     @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=20")
     rand_int = Random.rand(1..20)
     opts = {}
@@ -22,12 +23,29 @@ class Alert < ApplicationRecord
   end
 
   #Checks interval set by user and sets an expiration interval
-  def self.expiration_interval(interval)
-    case interval
-      when "hours" then @@expiration_interval = interval
-      when 'days' then @@expiration_interval = interval
-      when 'weeks' then @@expiration_interval = interval 
+  def self.expiration_timestamp(time_interval, time_value)
+    case time_interval
+      when "hours" then @expiration_timestamp = Time.now + time_value.hours
+      when 'days' then @expiration_timestamp = Time.now + time_value.days
+      when 'weeks' then @expiration_timestamp = Time.now + time_value.weeks
     end
   end
   
+  def self.record_percent_change 
+    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=20")
+    @crypto.each do |crypto|
+      @@daily_percent.push({ name: crypto['name'], change_24h: crypto['percent_change_24h'], time: Time.now })
+      @@weekly_percent.push({ name: crypto['name'], change_7d: crypto['percent_change_7d'], time: Time.now })
+      @@hourly_percent.push({ name: crypto['name'], percent_change_1h: crypto['percent_change_1h'], time: Time.now })
+    end
+  end
+
+  def self.check_percentage(percent)
+    case percent
+      when "daily" then @@daily_percent
+      when "weekly" then @@weekly_percent
+      when "hourly" then @@hourly_percent
+    end
+  end
+
 end

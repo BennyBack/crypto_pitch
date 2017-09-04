@@ -13,9 +13,9 @@ namespace :alerts do
        puts "The alert should be sent if the value rises to #{alert.max_new} at any point between #{alert.created_at} and #{future_interval} from now"
       end
       
-      # Create a method that sets Expiration Date
-      @expire = Alert.expiration_interval(@alert.time_interval)
-      puts @expire
+      # Create a method that sets expiration based on the user provided divided interval
+      @expiration_date = Alert.expiration_timestamp(@alert.time_interval, @alert.time_value)
+      
 
 
       end
