@@ -2,23 +2,27 @@
 <html>
 
 <head>
-	<title>Myapp</title>
-	<meta name=viewport content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-		<script type="text/javascript" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-			<link href="https://fonts.googleapis.com/css?family=Monoton|Raleway+Dots+family=Marcellus+SC" rel="stylesheet">
-			<%= csrf_meta_tags %>
-
+  <title>Myapp</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway+Dots+family=Marcellus+SC" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway+Dots|family=Sacramento" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Cormorant+Unicase|Lato:300" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+      <%= csrf_meta_tags %>
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg bg-info">
-		<%= link_to "Crypto Alerts", root_path, class:'navbar-brand' %>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-			  aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
+  <nav id="navheader" class="navbar navbar-expand-sm">
+    <%= link_to "Crypto Alerts", root_path, class:'navbar-brand' %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-label">Menu</span>
+    <span class="sr-only">Toggle menu navigation</span>
+    <span class="icon-bar"</span>
+      <span class="icon-bar"</span>
+        <span class="icon-bar"</span>
   </button>
 
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -62,24 +66,33 @@
 
 <!--       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-            %= link_to "About", about_path, class:'nav-link nav-item' %>
-          % if logged_in? %>
-            %= link_to "Settings", edit_user_path(current_user), class:'nav-link nav-item' %>
-            %= link_to "Dashboard", user_alerts_path(current_user), class:'nav-link nav-item' %>
-            %= link_to "Alerts", search_path, class:'nav-link nav-item' %>
-            %= link_to "Logout", logout_path,  method: :delete , class:'nav-link nav-item' %>
-            %= link_to "Profile", user_path(current_user), class: 'nav-link nav-item' %>
-          % else %>
-            %= link_to "Login", login_path, remote: true, class:'nav-link nav-item' %>
-            %= link_to "Sign Up", signup_path, remote: true, class:'nav-link nav-item' %>
-            %# link_to "Sign Up", signup_path, remote:true, class:'nav-link nav-item' %>
-          % end %>
+            <%= link_to "About", about_path, class:'nav-link nav-item' %>
+          <% if logged_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle nav-link nav-item dropdown-toggle " data-toggle="dropdown"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu" style="right:auto; left: auto;" role="menu">
+              <%= link_to "Dashboard", user_alerts_path(current_user), class:'dropdown-item' %>
+                <%= link_to "Alerts", search_path, class:'dropdown-item' %>
+                <%= link_to "Settings", edit_user_path(current_user), class:'dropdown-item' %></li>
+            </ul>
+          </li>
+        </ul>
+            <%#= link_to "Settings", edit_user_path(current_user), class:'nav-link nav-item' %>
+
+            <%#= link_to "Alerts", search_path, class:'nav-link nav-item' %>
+            <%= link_to "Logout", logout_path,  method: :delete , class:'nav-link nav-item' %>
+            <%#= link_to "Profile", user_path(current_user), class: 'nav-link nav-item' %>
+          <% else %>
+            <%= link_to "Login", login_path, remote: true, class:'nav-link nav-item' %>
+            <%= link_to "Sign Up", signup_path, remote: true, class:'nav-link nav-item' %>
+            <%# link_to "Sign Up", signup_path, remote:true, class:'nav-link nav-item' %>
+          <% end %>
             <%# link_to "About", about_path, class:'nav-link nav-item' %>
         </div>
       </div>
   </nav> -->
 
-
+<%= yield %>
 				<div class="container-fluid">
 					<% flash.each do |message_type, message| %>
 						<div class="alert alert-<%= message_type %>">
@@ -90,37 +103,26 @@
 								<%= debug(params) if Rails.env.development? %>
 				</div>
 
-				<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-							</div>
-							<div class="modal-body">
-								...
-							</div>
-						</div>
-					</div>
-				</div>
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign In Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+      </div>
+    </div>
+  </div>
 
-				<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Sign In Form</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-							</div>
-							<div class="modal-body">
-								...
-							</div>
-						</div>
-					</div>
-				</div>
+  <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+  <%= debug(params) if Rails.env.development? %>
 </body>
 
 </html>
