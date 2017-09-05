@@ -8,6 +8,7 @@ class AlertsController < ApplicationController
   end
 
   def index
+    @alerts = current_user.alerts
   end
 
 

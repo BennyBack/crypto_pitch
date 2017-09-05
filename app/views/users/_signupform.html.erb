@@ -1,40 +1,38 @@
-<form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: @user %>
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <%= form_for(user) do |f| %>
+    <%= render 'shared/error_messages', object: @user %>
 
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: 'form-control' %>
-    </br>
-    </div>
-    <div class="form-group col-md-6">
-      <%= f.label :profile_pic %>
-      <%= f.file_field :profile_pic %>
-    </div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </br>
   </div>
-  <div class="form-group">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, class: 'form-control' %>
+  <div class="form-group col-md-6">
+    <%= f.label :profile_pic %>
+    <%= f.file_field :profile_pic %>
   </div>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :email %>
+  <%= f.text_field :email, class: 'form-control' %>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-4">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, class: 'form-control' %>
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <%= f.label :phone_number %>
-      <%= f.text_field :phone_number, class: 'form-control' %>
-    </div>
-    <div class="form-group col-md-4">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-    <div class="form-group col-md-4">
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-    </div>
+  <div class="form-group col-md-4">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
   </div>
-      <%= f.submit yield(:button_text), class: 'edit btn btn-primary'  %>
-  <% end %>
-</form>
+  <div class="form-group col-md-4">
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+</div>
+    <%= f.submit yield(:button_text), class: 'edit btn btn-primary'  %>
+<% end %>

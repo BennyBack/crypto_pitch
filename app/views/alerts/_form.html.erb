@@ -23,19 +23,14 @@
             <%= f.text_field :max_new, class: "form-control", placeholder: "Max new"  %>
         </div>
 
-        <div class="time_interval row alert-inputs input-group">
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Time Interval
-        </button>
+        <div class="max_new row alert-inputs">
+            <%= f.select :direction, ['up', 'down'], class: "form-control" %>
+        </div>
 
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Hours</a>
-                    <a class="dropdown-item" href="#">Days</a>
-                    <a class="dropdown-item" href="#">Weeks</a>
-                </div>
-            </div>
-            <%= f.text_field :time_interval, class: "form-control", placeholder: "Time Value" %>
+        <div class="time_interval row alert-inputs input-group">
+            <%= f.select :time_interval, ['hours', 'days', 'weeks'], class: "form-control" %>
+
+            <%= f.text_field :time_value, class: "form-control", placeholder: "Time Value" %>
         </div>
     </div>
 

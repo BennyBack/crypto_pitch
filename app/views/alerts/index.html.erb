@@ -16,10 +16,28 @@
     <div class="col-md-9 col-sm-12">
 
         <p>Check our your alerts</p>
-        <% @alerts.each do |alert| %>
-        <%= alert.currency %>
-        <% end %>
+        <table class="table table-striped">
+          <tr>
+            <th>Symbol</th>
+            <th>Price (USD)</th>
+            <th>Starting Price</th>
+            <th>Percent Change</th>
+          </tr>
+          <% @alerts.each do |alert| %>
+            <tr>
+              <td><%=alert.currency%></td>
+              <td><%=alert.get_value('price_usd')%></td>
+              <td><%=alert.currency_value%></td>
+              <td><%= number_to_percentage(alert.percent_changed) %></td>
+            </tr>
+          <% end %>
+        </table>
 
+<%# <div class="z_div"
+<%# @alerts.each do |x| %>
+<%# x.currency %>
+<%# end %>
+<%# </div> %>
 
     </div>
 </div>
