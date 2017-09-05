@@ -2,9 +2,11 @@
  <html>
  <head>
    <title>Myapp</title>
-   <meta name=viewport content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
       <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  		<meta name="generator" content="thesitewizard.com's Layout Wizard 1.1.1">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway+Dots+family=Marcellus+SC" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway+Dots|family=Sacramento" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Cormorant+Unicase|Lato:300" rel="stylesheet">
@@ -28,19 +30,21 @@
   </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
          <div class="navbar-nav ml-auto">
-             <%= link_to "About", about_path, class:'nav-link nav-item' %>
+
            <% if logged_in? %>
            <li class="dropdown">
             <a href="#" class="dropdown-toggle nav-link nav-item dropdown-toggle " data-toggle="dropdown"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
-            <ul class="dropdown-menu" style="right:auto; left: auto;" role="menu">
+            <ul class="dropdown-menu" style="left: auto;" role="menu">
               <%= link_to "Dashboard", user_alerts_path(current_user), class:'dropdown-item' %>
-               <%= link_to "Alerts", search_path, class:'dropdown-item' %>
+               <%= link_to "Currency", search_path, class:'dropdown-item' %>
                 <%= link_to "Settings", edit_user_path(current_user), class:'dropdown-item' %></li>
            </ul>
           </li>
+          <%= link_to "About", about_path, class:'nav-link nav-item' %>
         <%= link_to "Logout", logout_path,  method: :delete , class:'nav-link nav-item' %>
             <%#= link_to "Profile", user_path(current_user), class: 'nav-link nav-item' %>
           <% else %>
+          <%= link_to "About", about_path, class:'nav-link nav-item' %>
             <%= link_to "Login", login_path, remote: true, class:'nav-link nav-item' %>
             <%= link_to "Sign Up", signup_path, remote: true, class:'nav-link nav-item' %>
           <% end %>
@@ -70,7 +74,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Sign In Form</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Sign Up Form</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -83,9 +87,11 @@
   </div>
 
   <% flash.each do |message_type, message| %>
-       <div class="alert alert-<%= message_type %>"><%= message %></div>
+       <%= message %>
        <% end %>
    <%= debug(params) if Rails.env.development? %>
+
+
 
 </body>
 

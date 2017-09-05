@@ -10,7 +10,7 @@
     </div>
     <div class="form-group col-md-6">
       <%= f.label :profile_pic %>
-      <%= f.file_field :avatar %>
+      <%= f.file_field :profile_pic %>
     </div>
   </div>
   <div class="form-group">
@@ -22,7 +22,7 @@
     <%= f.text_field :email, class: 'form-control' %>
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <%= f.label :phone_number %>
       <%= f.text_field :phone_number, class: 'form-control' %>
     </div>
@@ -30,8 +30,8 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
     </div>
-    <div class="form-group col-md-2">
-      <%= f.label :password_confirmation, "Password Confirmation" %>
+    <div class="form-group col-md-4">
+      <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
   </div>

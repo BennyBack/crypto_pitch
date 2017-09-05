@@ -36,4 +36,3 @@ users.each do |user|
       )
 end
 puts "Seed file complete"
-
