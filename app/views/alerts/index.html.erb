@@ -11,17 +11,22 @@
         <%= image_tag current_user.profile_pic.url(:thumb), class: "pb-4" %>
         <h1><%= "#{current_user.first_name + current_user.last_name}" %></h1>
         <p><%=current_user.email%></p>
-        <p><%=current_user.phone_number%></p>
+        <p><%#=current_user.phone_number%></p>
     </div>
-    <div class="col-md-9 col-sm-12">
 
-        <p>Check our your alerts</p>
-        <table class="table table-striped">
+    <div class="dashboard_table col-xs-12 col-sm-12">
+
+
+        <table id="dashboard_table" class="table table-bordered table-hover table-responsive">
+          <tr>
+            <th class="dashboard_header" colspan="9">Your Alerts!</th>
+          </tr>
           <tr>
             <th>Symbol</th>
             <th>Price (USD)</th>
             <th>Starting Price</th>
             <th>Percent Change</th>
+            <th>Alert Direction</th>
           </tr>
           <% @alerts.each do |alert| %>
             <tr>
@@ -29,6 +34,7 @@
               <td><%=alert.get_value('price_usd')%></td>
               <td><%=alert.currency_value%></td>
               <td><%= number_to_percentage(alert.percent_changed) %></td>
+              <td><%=alert.direction%></td>
             </tr>
           <% end %>
         </table>
