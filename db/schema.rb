@@ -34,12 +34,9 @@ ActiveRecord::Schema.define(version: 20170904232527) do
     t.string "last_name"
     t.string "email"
     t.string "phone_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "password"
     t.string "password_digest"
     t.string "remember_digest"
-    t.text "profile_pic"
     t.string "profile_pic_file_name"
     t.string "profile_pic_content_type"
     t.integer "profile_pic_file_size"
