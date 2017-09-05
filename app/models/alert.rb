@@ -42,7 +42,6 @@ class Alert < ApplicationRecord
   def expired?
    expiration_timestamp && (Time.now > expiration_timestamp)
   end
-
   # gets the current value of the alert by querying the name of cryptocurrency
   def get_value(value)
     crypto = (HTTParty.get("https://api.coinmarketcap.com/v1/ticker/#{currency}/")).parsed_response

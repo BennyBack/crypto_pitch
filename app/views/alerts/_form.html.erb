@@ -1,7 +1,7 @@
 <%= form_with(model: @alert, remote: true, url: user_alerts_path(current_user), :authenticity_token => true) do |f| %>
     <div class="col">
         <div class="time row alert-inputs">
-            <%= f.text_field :alert_time, class: "form-control", value: "#{DateTime.now.strftime('%I:%M')}"  %>
+            <%= f.text_field :created_at, class: "form-control", value: "#{DateTime.now.strftime('%I:%M')}"  %>
         </div>
 
         <div class="currency row alert-inputs">
@@ -30,7 +30,7 @@
         <div class="time_interval row alert-inputs input-group">
             <%= f.select :time_interval, ['hours', 'days', 'weeks'], class: "form-control" %>
 
-            <%= f.text_field :time_value, class: "form-control", placeholder: "Time Value" %>
+            <%= f.text_field :time_value , class: "form-control", placeholder: "Time Value" %>
         </div>
     </div>
 

@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
     before_action :logged_in_user, only: [:edit, :update]
     before_action :correct_user, only: [:edit, :update]
-    # before_action :set_user, only: [:show, :edit, :update]
+    before_action :set_user, only: [:show, :edit, :update, :destroy]
+    
 
   def new
     @user = User.new
@@ -11,30 +12,27 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
         log_in @user
-        flash[:success] = "Account Created, Welcome!"
-        redirect_to @user
+        redirect_to root_path, :notice => 'Alert was successfully created.' 
     else
         render 'new'
     end
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-      @user = User.find(params[:id])
       if @user.update_attributes(user_params)
-          flash[:success] = "Success Updated Profile"
-          redirect_to @user
+          redirect_to @user, :notice => "Success Updated Profile" 
       else
           render 'edit'
       end
   end
+
+  private 
 
   def set_user
     @user = User.find(params[:id])

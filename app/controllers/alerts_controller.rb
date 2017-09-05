@@ -11,23 +11,21 @@ class AlertsController < ApplicationController
     @alerts = current_user.alerts
   end
 
-
-  def dashboard
-  end
-
   def create
   @alert = Alert.new(alert_params)
-  @alert.user = current_user
-   if @alert.save
-    redirect_to user_alerts_path(current_user, @alert)
-    flash[:success] = "Alert created!"
+   if @alert.save!
+    redirect_to user_alerts_path(@alert), :notice => "Alert created!" 
+  else 
+      render 'new'
    end
   end
 
-  def new
+def new
     @currency = params[:currency]
     @currency_value = params[:currency_value]
-    # @currency = params(:currency).permit(:currency, :currency_value)
+  end
+  
+  def edit
   end
 
   def show
@@ -35,13 +33,22 @@ class AlertsController < ApplicationController
 
   def update
     if @alert.update(alert_params)
-      redirect_to user_alerts_path
+      redirect_to user_alerts_path(current_user), :notice => "Alert Updated!" 
+    else
+      render 'edit'
     end
   end
 
+  def destroy
+      @alert.destroy
+      redirect_to user_alerts_path(current_user), :notice => "Alert Deleted!"
+  end
+
   private
+  
   def set_alert
     @alert = Alert.find(params[:id])
+    @alert.user=current_user    
   end
 
   def new_alert
@@ -53,6 +60,7 @@ class AlertsController < ApplicationController
   end
 
   def alert_params
-    params.require(:alert).permit(:alert_time, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval)
+    params.require(:alert).permit(:created_at, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval, :direction)
   end
+
 end
