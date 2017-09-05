@@ -33,6 +33,7 @@ def new
 
   def update
     if @alert.update(alert_params)
+      @alert.user=current_user  
       redirect_to user_alerts_path(current_user), :notice => "Alert Updated!" 
     else
       render 'edit'
@@ -40,15 +41,15 @@ def new
   end
 
   def destroy
-      @alert.destroy
-      redirect_to user_alerts_path(current_user), :notice => "Alert Deleted!"
+      @alert.destroy(alert_params)
+      # @alert.user=current_user  
+      redirect_to alerts_url, :notice => "Alert Deleted!"
   end
 
   private
   
   def set_alert
     @alert = Alert.find(params[:id])
-    @alert.user=current_user    
   end
 
   def new_alert
@@ -60,7 +61,8 @@ def new
   end
 
   def alert_params
-    params.require(:alert).permit(:created_at, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval, :direction)
+    params.require(:alert).permit(:alert, :created_at, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval, :direction,:user_id)
   end
 
 end
+=> #<Alert id: 1, created_at: "2017-09-05 20:41:46", updated_at: "2017-09-05 20:41:46", user_id: 1, currency: "IOTA", currency_value: 0.625709e0, min_new: 0, max_new: 0, time_value: 3, time_interval: "days", direction: nil>

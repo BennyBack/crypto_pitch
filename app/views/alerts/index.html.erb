@@ -30,7 +30,7 @@
               <td><%=alert.currency_value%></td>
               <td><%= number_to_percentage(alert.percent_changed) %></td>
               <td><%= link_to 'Edit', user_alerts_path(current_user) %></td>
-              <td><%= link_to 'Delete', user_alerts_path(current_user), method: :delete %></td>
+              <td><%= link_to 'Delete', alert_path(@alert, current_user), method: :delete %></td>
             </tr>
           <% end %>
         </table>
