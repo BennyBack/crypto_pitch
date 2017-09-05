@@ -4,7 +4,7 @@ class AlertsController < ApplicationController
   before_action :new_alert, only: [:index, :new]
 
   def search
-    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=5")
+    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/")
   end
 
   def index
@@ -28,7 +28,7 @@ class AlertsController < ApplicationController
     @currency_value = params[:currency_value]
     # @currency = params(:currency).permit(:currency, :currency_value)
   end
-    
+
   def show
   end
 
