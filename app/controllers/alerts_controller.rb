@@ -5,7 +5,7 @@ class AlertsController < ApplicationController
   
 # search for a cryptocurrency
   def search
-    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/")
+    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=10")
   end
 
 # list current_user alerts

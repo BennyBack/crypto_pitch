@@ -12,6 +12,7 @@
       <th>1 Hr %&Delta;</th>
       <th>1 Day %&Delta;</th>
       <th>7 Day %&Delta;</th>
+      <th></th>
     </thead>
     <tbody>
 
@@ -37,6 +38,7 @@
             <td><%= result['percent_change_24h'] %></td>
             <!--    Row:  Percent Change in 7 Days  -->
             <td><%= result['percent_change_7d'] %></td>
+            <td><%= link_to "New Alert", new_user_alert_path(current_user) %>
         </tr>
       <% end %>
     </tbody>
@@ -60,10 +62,3 @@
         </div>
       </div>
     </div>
-
-<!-- AJAX Call to load table -->
-<script type="text/javascript">
-$(document).on("turbolinks:load", function(){
-  $('#alerts').DataTable();
-});
-</script>
