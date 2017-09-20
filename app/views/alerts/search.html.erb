@@ -30,7 +30,6 @@
         <td><%= result['percent_change_1h'] %></td>
         <td><%= result['percent_change_24h'] %></td>
         <td><%= result['percent_change_7d'] %></td>
-        <td id="alert_me"><%= link_to "Alert Me", "#{new_user_alert_path(current_user)}?currency=#{result['name']}&currency_value=#{result['price_usd']}", remote: true %></td>
         </tr>
       <% end %>
     </tbody>
