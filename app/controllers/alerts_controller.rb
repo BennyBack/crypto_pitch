@@ -65,4 +65,3 @@ def new
   end
 
 end
-=> #<Alert id: 1, created_at: "2017-09-05 20:41:46", updated_at: "2017-09-05 20:41:46", user_id: 1, currency: "IOTA", currency_value: 0.625709e0, min_new: 0, max_new: 0, time_value: 3, time_interval: "days", direction: nil>

@@ -26,9 +26,9 @@ class Alert < ApplicationRecord
     end
   end
 
-  def percent_changed
-    ((get_value('price_usd') - self.currency_value)/self.currency_value)* 100
-  end
+#   def percent_changed
+#     ((get_value('price_usd') - self.currency_value)/self.currency_value)* 100
+#   end
 
   #Checks interval set by user and sets an expiration interval
   def expiration_timestamp
@@ -43,10 +43,10 @@ class Alert < ApplicationRecord
    expiration_timestamp && (Time.now > expiration_timestamp)
   end
   # gets the current value of the alert by querying the name of cryptocurrency
-  def get_value(value)
-    crypto = (HTTParty.get("https://api.coinmarketcap.com/v1/ticker/#{currency}/")).parsed_response
-    crypto[0][value].to_d
-  end
+#   def get_value(value)
+#     crypto = (HTTParty.get("https://api.coinmarketcap.com/v1/ticker/#{value}/")).parsed_response
+#     # crypto[0][value].to_d
+#   end
 
   def send_message(alert_message)
     @twilio_number = ENV['TWILIO_NUMBER']
