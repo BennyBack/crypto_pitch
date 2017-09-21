@@ -13,13 +13,14 @@
       <th>1 Day %&Delta;</th>
       <th>7 Day %&Delta;</th>
       <th></th>
+      
     </thead>
     <tbody>
 
       <% @crypto.each do |result| %>
        <tr>
             <!--    Row: Rank   -->
-            <td></a><%= result['rank'] %></td>
+            <td><%= result['rank'] %></td>
             <!--    Row: Price(USD)   -->
             <td ><%= result['price_usd'] %></td>
             <!--    Row: Price(BTC)  -->
@@ -38,7 +39,7 @@
             <td><%= result['percent_change_24h'] %></td>
             <!--    Row:  Percent Change in 7 Days  -->
             <td><%= result['percent_change_7d'] %></td>
-            <td><%= link_to "New Alert", new_user_alert_path(current_user) %>
+            <td><%= link_to "Alert Me", "#{new_alert_path}?crypto_id=#{result["id"]}&currency=#{result['name']}&currency_value=#{result['price_usd']}" %></td>
         </tr>
       <% end %>
     </tbody>

@@ -1,35 +1,48 @@
-<%= form_with(model: @alert, remote: true, url: user_alerts_path(current_user), :authenticity_token => true) do |f| %>
-    <div class="col">
-        <div class="time row alert-inputs">
+<div>
+<%= form_with(model: @alert) do |f| %>
+    
+        <div>
+            <%= f.label :time %>
             <%= f.text_field :created_at, class: "form-control", value: "#{DateTime.now.strftime('%I:%M')}"  %>
         </div>
 
-        <div class="currency row alert-inputs">
+        <div>
+            <%= f.label :currency %>
             <%= f.text_field :currency, class: "form-control", value: "#{@currency}" %>
         </div>
 
-        <div class="currency_value row alert-inputs">
+
+        <div>
+            <%= f.label :current_value %>
             <%= f.text_field :currency_value, class: "form-control", value: "#{@currency_value}"  %>
         </div>
 
 
-        <div class="min_new row alert-inputs">
+        <div>
+            <%= f.label :minimum %>
             <%= f.text_field :min_new, class: "form-control", placeholder: "Min new" %>
         </div>
 
-        <div class="max_new row alert-inputs">
+        <div>
+            <%= f.label :maximum %>
             <%= f.text_field :max_new, class: "form-control", placeholder: "Max new"  %>
         </div>
 
-        <div class="max_new row alert-inputs">
+        <div>
+            <%= f.label :direction %>
             <%= f.select :direction, ['up', 'down'], class: "form-control" %>
         </div>
 
-        <div class="time_interval row alert-inputs input-group">
+        <div>
+            <%= f.label  :time_interval %>
             <%= f.select :time_interval, ['hours', 'days', 'weeks'], class: "form-control" %>
-
             <%= f.text_field :time_value , class: "form-control", placeholder: "Time Value" %>
         </div>
-    </div>
+        
+            <%= f.hidden_field :crypto_id,  value: "#{@crypto_id}" %>
 
+        <div>
+        <%= f.submit "Create Alert" %>
+        </div>
     <% end %>
+</div>
