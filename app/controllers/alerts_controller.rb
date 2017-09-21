@@ -5,7 +5,8 @@ class AlertsController < ApplicationController
   
 # search for a cryptocurrency
   def search
-    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/")
+    @crypto = HTTParty.get("https://api.coinmarketcap.com/v1/ticker/?limit=10")
+    @crypto_id = params[:id]
   end
 
 # list current_user alerts
@@ -17,9 +18,9 @@ class AlertsController < ApplicationController
   def create
         @alert = Alert.new(alert_params)
         if @alert.save!
-            redirect_to user_alerts_path(@alert), :notice => "Alert created!" 
+            redirect_to alerts_path(@alert)
         else 
-            render 'new'
+            render 'new', :notice => "Uh Oh"
         end
     end
 
@@ -27,6 +28,7 @@ class AlertsController < ApplicationController
 def new
     @currency = params[:currency]
     @currency_value = params[:currency_value]
+    @crypto_id = params[:crypto_id]
 end
   
 def edit
@@ -68,7 +70,7 @@ end
 
 # alert parameters
 def alert_params
-params.require(:alert).permit(:alert, :created_at, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval, :direction,:user_id)
+params.require(:alert).permit(:alert, :created_at, :currency, :currency_value,:start_value, :min_new, :max_new, :time_value, :time_interval, :direction, :crypto_id)
 end
 
 end
