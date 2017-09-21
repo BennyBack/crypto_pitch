@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904232527) do
+ActiveRecord::Schema.define(version: 20170920021855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20170904232527) do
     t.integer "time_value"
     t.string "time_interval"
     t.string "direction"
+    t.string "crypto_id"
     t.index ["user_id"], name: "index_alerts_on_user_id"
   end
 

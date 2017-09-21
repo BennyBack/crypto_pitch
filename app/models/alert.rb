@@ -1,7 +1,7 @@
 require 'bigdecimal/util'
 
 class Alert < ApplicationRecord
-  belongs_to :user
+#   belongs_to :user
   @cumulative = 0
 
 # Using the expiration_timestamp, compared aainst the present to determine if the alert has expired
