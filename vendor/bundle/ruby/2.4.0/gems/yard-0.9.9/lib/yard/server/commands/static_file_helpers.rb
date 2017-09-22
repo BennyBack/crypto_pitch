@@ -13,7 +13,7 @@ module YARD
         # @raise [FinishRequest] finalizes an empty body if the path matches
         #   /favicon.ico so browsers don't complain.
         def favicon?
-          return unless request.path == '/favicon.ico'
+        #   return unless request.path == '/favicon.ico'
           headers['Content-Type'] = 'image/png'
           self.status = 200
           self.body = ''

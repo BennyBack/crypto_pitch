@@ -85,7 +85,7 @@ module Rack
 
     def initialize(app, options={})
       @app = app
-      @urls = options[:urls] || ["/favicon.ico"]
+    #   @urls = options[:urls] || ["/favicon.ico"]
       @index = options[:index]
       @gzip = options[:gzip]
       root = options[:root] || Dir.pwd

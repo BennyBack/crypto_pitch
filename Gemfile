@@ -32,7 +32,6 @@ gem 'railties', '~> 5.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails', '~> 4.3'
-gem 'bootstrap-sass'
 gem 'faker', '~> 1.8'
 gem 'rails-controller-testing', '~> 1.0'
 gem 'nokogiri', '~> 1.8'
@@ -46,6 +45,9 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails' 
+  gem 'cucumber-rails', :require => false 
+  gem 'database_cleaner' 
 end
 
 group :development do
