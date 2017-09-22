@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body class="full_dashboard">
+<body class="full_dashboard">
     <h1 class="dashboard">Welcome <%= "#{current_user.first_name}"%></h1>
     <div class="row">
     <div id="dashboard_pic" class="col-md-3 col-sm-12">
@@ -31,15 +25,10 @@
           <% @alerts.each do |alert| %>
             <tr>
               <td><%=alert.currency%></td>
-              <td><%=alert.get_value('price_usd')%></td>
+              <td><%# alert.get_value(price_usd)%></td>
               <td><%=alert.currency_value%></td>
-              <td><%= number_to_percentage(alert.percent_changed) %></td>
-<<<<<<< HEAD
-              <td><%= link_to 'Edit', user_alerts_path(current_user) %></td>
-              <td><%= link_to 'Delete', alert_path(@alert, current_user), method: :delete %></td>
-=======
+              <td><%# number_to_percentage(alert.percent_changed) %></td>
               <td><%=alert.direction%></td>
->>>>>>> 0f952282e5013f65a62bc25af8747d66a01e4abf
             </tr>
           <% end %>
         </table>

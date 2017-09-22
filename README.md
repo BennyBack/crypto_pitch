@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# TO DO
+1. Add hidden form for Cryptocurrency id for task to execute correctly
+2. Add validations for creating a new alert
+3. Set up Oauth with Coinbase, Google and Facebook
+4. Setup AJAX for login, new account, new alerts,editing alerts, and loading table. 

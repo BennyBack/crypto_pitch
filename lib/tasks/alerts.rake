@@ -3,8 +3,7 @@ require 'bigdecimal/util'
 namespace :alerts do
   desc "User can receive alert based on MAX_NEW value"
   task min: :environment do
-    # check for expiration
-    @alerts = Alert.all#get a random alert
+    @alerts = Alert.all
     @alerts.each do |alert|
       unless alert.expired?
         present_value = alert.get_value('price_usd').to_d

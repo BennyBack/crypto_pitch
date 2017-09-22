@@ -2,7 +2,6 @@
 <table id="alerts" class="table table-bordered table-hover table-responsive">
   <thead class="thead-default">
     <tr>
-      <th>Symbol</th>
       <th>Rank</th>
       <th>Price (USD)</th>
       <th>Price (Bitcoin)</th>
@@ -14,23 +13,33 @@
       <th>1 Day %&Delta;</th>
       <th>7 Day %&Delta;</th>
       <th></th>
+      
     </thead>
     <tbody>
 
       <% @crypto.each do |result| %>
-       <tr id="<%= result['symbol'] %>">
-        <td><a tabindex="0" class="btn  crypto-name" role="button" data-toggle="tooltip" data-placement="bottom" title="<%= result['name'] %>"><%= result['symbol'] %></a></td>
-        <td><%= result['rank'] %></td>
-        <td class="price"><%= result['price_usd'] %></td>
-        <td><%= result['price_btc']%></td>
-        <td><%= result['24h_volume_usd'] %></td>
-        <td><%= result['market_cap_usd'] %></td>
-        <td><%= result['available_supply'] %></td>
-        <td><%= result['total_supply'] %></td>
-        <td><%= result['percent_change_1h'] %></td>
-        <td><%= result['percent_change_24h'] %></td>
-        <td><%= result['percent_change_7d'] %></td>
-        <td id="alert_me"><%= link_to "Alert Me", "#{new_user_alert_path(current_user)}?currency=#{result['name']}&currency_value=#{result['price_usd']}", remote: true %></td>
+       <tr>
+            <!--    Row: Rank   -->
+            <td><%= result['rank'] %></td>
+            <!--    Row: Price(USD)   -->
+            <td ><%= result['price_usd'] %></td>
+            <!--    Row: Price(BTC)  -->
+            <td><%= result['price_btc']%></td>
+            <!--    Row: 24 Hour Volume   -->
+            <td><%= result['24h_volume_usd'] %></td>
+            <!--    Row: Market Cap(USD)   -->
+            <td><%= result['market_cap_usd'] %></td>
+            <!--    Row: (Available Supply)   -->
+            <td><%= result['available_supply'] %></td>
+            <!--    Row: Total Supply   -->
+            <td><%= result['total_supply'] %></td>
+            <!--    Row: Percent Change in 1 Hr   -->
+            <td><%= result['percent_change_1h'] %></td>
+            <!--    Row: Percent Change in 24 Hours   -->
+            <td><%= result['percent_change_24h'] %></td>
+            <!--    Row:  Percent Change in 7 Days  -->
+            <td><%= result['percent_change_7d'] %></td>
+            <td><%= link_to "Alert Me", "#{new_alert_path}?crypto_id=#{result["id"]}&currency=#{result['name']}&currency_value=#{result['price_usd']}" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -54,9 +63,3 @@
         </div>
       </div>
     </div>
-
-<script type="text/javascript">
-$(document).on("turbolinks:load", function(){
-  $('#alerts').DataTable();
-});
-</script>
