@@ -352,7 +352,7 @@ module Rails
           remove_file "public/500.html"
           remove_file "public/apple-touch-icon-precomposed.png"
           remove_file "public/apple-touch-icon.png"
-          remove_file "public/favicon.ico"
+        #   remove_file "public/favicon.ico"
         end
       end
 
